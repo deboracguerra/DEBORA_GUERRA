@@ -1,0 +1,6 @@
+{
+  "name": "Portfólio Débora Guerra",
+  "description": "Landing Page de Portfólio Pessoal e Transição de Carreira para Ciência de Dados de Débora Guerra.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
