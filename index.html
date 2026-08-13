@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DÉBORA GUERRA | Data Science & Post-Production</title>
+  <meta name="description" content="Landing Page de Portfólio Pessoal de Débora Guerra. Transição de Pós-Produção para Ciência de Dados, Python, SQL, OCI e Machine Learning." />
+  
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#8A2BE2',
+              purpleHover: '#7822C9',
+              purpleLight: '#9B51E0',
+              bgDark: '#0D0D0D',
+              surface: '#121212',
+              card: '#161616',
+              border: '#242424',
+              muted: '#A0A0A0',
+              subtle: '#737373'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar & Selection */
+    ::selection {
+      background-color: #8A2BE2;
+      color: #FFFFFF;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0D0D0D;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8A2BE2;
+    }
+    .writing-vertical-lr {
+      writing-mode: vertical-lr;
+    }
+    .writing-vertical-rl {
+      writing-mode: vertical-rl;
+    }
+  </style>
+</head>
+<body class="bg-[#0D0D0D] text-[#FFFFFF] font-sans antialiased selection:bg-[#8A2BE2] selection:text-white min-h-screen overflow-x-hidden relative">
+
+  <!-- ==========================================
+       SIDEBAR DECORATIVE TEXTS (GRID EDITORIAL)
+       ========================================== -->
+  <aside class="hidden xl:flex fixed left-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none select-none items-center gap-3 text-[10px] font-mono tracking-[0.28em] text-[#444444] uppercase writing-vertical-lr rotate-180">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#8A2BE2]"></span>
+    <span>DATA &amp; POST-PRODUCTION</span>
+    <span class="w-8 h-px bg-[#262626]"></span>
+    <span>DÉBORA GUERRA</span>
+  </aside>
+
+  <aside class="hidden xl:flex fixed right-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none select-none items-center gap-3 text-[10px] font-mono tracking-[0.28em] text-[#444444] uppercase writing-vertical-rl">
+    <span>EDITION 2026</span>
+    <span class="w-8 h-px bg-[#262626]"></span>
+    <span>BRAZIL &bull; GLOBAL DELIVERY</span>
+    <span class="w-1.5 h-1.5 rounded-full bg-[#8A2BE2]"></span>
+  </aside>
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+       ========================================== -->
+  <header class="sticky top-0 z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#1E1E1E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Left -->
+      <a href="#" class="group flex items-center gap-2">
+        <span class="font-display font-black text-xl sm:text-2xl tracking-tighter text-white uppercase group-hover:text-brand-purple transition-colors">
+          DÉBORA GUERRA<span class="text-brand-purple">.</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-mono tracking-wider uppercase text-[#A0A0A0]">
+        <a href="#about" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_about">Sobre</a>
+        <a href="#skills" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_skills">Habilidades</a>
+        <a href="#education" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_education">Educação</a>
+        <a href="#experience" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_experience">Experiência</a>
+        <a href="#certifications" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_events">Eventos</a>
+        <a href="#projects" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_projects">Projetos</a>
+        <a href="#contact" class="hover:text-white hover:text-brand-purple transition-colors" data-i18n="nav_contact">Contato</a>
+      </nav>
+
+      <!-- Right Controls: Language Toggle & Social Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-[#181818] border border-[#2A2A2A] rounded-lg p-1 text-xs font-mono">
+          <button id="lang-btn-pt" onclick="setLanguage('pt')" class="px-2.5 py-1 rounded font-bold uppercase transition-all bg-brand-purple text-white shadow-sm">
+            PT
+          </button>
+          <button id="lang-btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded font-bold uppercase transition-all text-[#888888] hover:text-white">
+            EN
+          </button>
+        </div>
+
+        <!-- Social Icons: GitHub & LinkedIn (Obligatory Real Links) -->
+        <div class="hidden sm:flex items-center gap-2 border-l border-[#222222] pl-3">
+          <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-[#181818] hover:bg-[#252525] border border-[#2E2E2E] text-white hover:text-brand-purple transition-colors" title="GitHub">
+            <i class="fa-brands fa-github text-base"></i>
+          </a>
+          <a href="https://linkedin.com/in/deboracguerra" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-[#181818] hover:bg-[#252525] border border-[#2E2E2E] text-white hover:text-brand-purple transition-colors" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in text-base"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-lg bg-[#181818] border border-[#2A2A2A] text-white hover:text-brand-purple transition-colors">
+          <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#111111] border-b border-[#222222] px-6 py-5 space-y-4 font-mono text-sm uppercase tracking-wider">
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_about">Sobre</a>
+      <a href="#skills" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_skills">Habilidades</a>
+      <a href="#education" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_education">Educação</a>
+      <a href="#experience" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_experience">Experiência</a>
+      <a href="#certifications" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_events">Eventos</a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_projects">Projetos</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-[#A0A0A0] hover:text-white py-1" data-i18n="nav_contact">Contato</a>
+      <div class="flex items-center gap-3 pt-3 border-t border-[#222222]">
+        <a href="https://github.com/deboracguerra" target="_blank" class="flex-1 text-center py-2 rounded bg-[#1C1C1C] border border-[#333333] text-xs font-bold text-white flex items-center justify-center gap-2">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/deboracguerra" target="_blank" class="flex-1 text-center py-2 rounded bg-[#1C1C1C] border border-[#333333] text-xs font-bold text-white flex items-center justify-center gap-2">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         BLOCO 1: HERO & BIO
+         ========================================== -->
+    <section id="about" class="relative py-16 md:py-24 border-b border-[#1E1E1E] overflow-hidden">
+      <!-- Background Ambient Grid Glow -->
+      <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-purple/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Lado Esquerdo: Foto de perfil com CÍRCULO ROXO VIBRANTE (#8A2BE2) de fundo -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-start">
+            <div class="relative group">
+              <!-- CÍRCULO ROXO VIBRANTE ATRÁS DA FOTO -->
+              <div class="absolute -inset-4 sm:-inset-6 bg-[#8A2BE2] rounded-full filter blur-md opacity-70 group-hover:opacity-90 group-hover:blur-xl transition-all duration-500 animate-pulse"></div>
+              <div class="absolute inset-0 bg-[#8A2BE2] rounded-full scale-105 shadow-[0_0_50px_rgba(138,43,226,0.5)]"></div>
+
+              <!-- Tag de Imagem Obrigatória: <img src="1000000145.jpg" alt="Débora Guerra" id="profile-img"> -->
+              <div class="relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-[#0D0D0D] bg-[#121212] shadow-2xl">
+                <img
+                  src="1000000145.jpg"
+                  alt="Débora Guerra"
+                  id="profile-img"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80'"
+                />
+              </div>
+
+              <!-- Floating Status Pill -->
+              <div class="absolute -bottom-2 right-2 sm:bottom-2 sm:right-6 z-20 bg-[#121212]/95 border border-[#8A2BE2]/50 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-[#8A2BE2] animate-ping"></span>
+                <span class="text-[11px] font-mono text-white font-medium uppercase tracking-wider" data-i18n="hero_status">Disponível para Projetos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado Direito: Título, Subtítulo, Bio & CTAs -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="space-y-2">
+              <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-purple tracking-widest uppercase">
+                <i class="fa-solid fa-code"></i>
+                <span data-i18n="hero_badge">Portfólio Profissional 2026</span>
+              </div>
+              <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display tracking-tight text-white uppercase leading-none">
+                DÉBORA GUERRA
+              </h1>
+              <p class="text-xs sm:text-sm md:text-base font-mono font-bold text-brand-purple uppercase tracking-wider pt-1">
+                TRANSITIONING TO DATA SCIENCE | EX-POST PRODUCTION SPECIALIST
+              </p>
+            </div>
+
+            <!-- Bio Description -->
+            <p class="text-sm sm:text-base text-[#A0A0A0] leading-relaxed max-w-2xl font-sans" data-i18n="hero_bio">
+              Profissional com sólida trajetória em gestão de fluxos de trabalho de pós-produção para grandes players globais (Netflix, HBO, Globoplay, Amazon Prime Video). Atualmente em transição de carreira para a área de Dados, combinando maturidade profissional, capacidade analítica e conhecimentos em Python, SQL e ETL/ELT. Graduanda em Ciência da Computação.
+            </p>
+
+            <!-- Mandatory Functional CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-4">
+              <!-- CTA 1: Acessar Meu GitHub -->
+              <a
+                href="https://github.com/deboracguerra"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-brand-purple hover:bg-brand-purpleHover text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider transition-all duration-300 shadow-[0_0_25px_rgba(138,43,226,0.45)] hover:shadow-[0_0_35px_rgba(138,43,226,0.7)]"
+                data-i18n="cta_github"
+              >
+                <i class="fa-brands fa-github text-sm"></i>
+                <span>Acessar Meu GitHub</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+
+              <!-- CTA 2: LinkedIn -->
+              <a
+                href="https://linkedin.com/in/deboracguerra"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded bg-[#181818] hover:bg-[#222222] border border-[#333333] hover:border-brand-purple text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300"
+              >
+                <i class="fa-brands fa-linkedin-in text-brand-purple text-sm"></i>
+                <span>LinkedIn</span>
+              </a>
+
+              <!-- CTA 3: Contato -->
+              <a
+                href="mailto:deboracguerra@gmail.com"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded bg-[#181818] hover:bg-[#222222] border border-[#333333] hover:border-brand-purple text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300"
+                data-i18n="cta_contact"
+              >
+                <i class="fa-regular fa-envelope text-brand-purple text-sm"></i>
+                <span>Contato</span>
+              </a>
+            </div>
+
+            <!-- Quick Metrics Grid -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-[#1E1E1E]">
+              <div>
+                <div class="text-xl sm:text-2xl font-black font-display text-white">10+</div>
+                <div class="text-[11px] font-mono text-[#777777] uppercase" data-i18n="stat_experience">Anos Pós-Produção</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-black font-display text-brand-purple">130h+</div>
+                <div class="text-[11px] font-mono text-[#777777] uppercase" data-i18n="stat_datascience">Data Science Oracle</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-black font-display text-white">2026</div>
+                <div class="text-[11px] font-mono text-[#777777] uppercase" data-i18n="stat_cert">OCI Certified</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCO 2: HABILIDADES TÉCNICAS (TECH STACK)
+         ========================================== -->
+    <section id="skills" class="py-20 md:py-28 bg-[#0D0D0D] border-b border-[#1E1E1E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-14 pb-6 border-b border-[#1E1E1E] space-y-2">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-purple tracking-widest uppercase">
+            <i class="fa-solid fa-layer-group"></i>
+            <span data-i18n="skills_section_tag">Competências &amp; Ferramentas</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase" data-i18n="skills_title">
+            HABILIDADES TÉCNICAS (TECH STACK)
+          </h2>
+          <p class="text-sm sm:text-base text-[#A0A0A0] max-w-3xl" data-i18n="skills_subtitle">
+            Conjunto de tecnologias, bancos relacionais, computação em nuvem e engenharia de dados aplicados na resolução de problemas complexos de negócio.
+          </p>
+        </div>
+
+        <!-- Tech Stack Minimalist Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          
+          <!-- 1. Python -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-brands fa-python text-2xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">Python</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Pandas, NumPy, Scikit-Learn</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_python_desc">
+                Análise exploratória, manipulação de dataframes massivos, modelagem preditiva e automação de scripts.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Data Analysis &amp; ML</span>
+            </div>
+          </div>
+
+          <!-- 2. SQL (MySQL) -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-database text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">SQL (MySQL)</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Procedures &amp; Queries Avançadas</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_sql_desc">
+                Modelagem relacional, joins complexos, índices, CTEs, subconsultas e criação de Stored Procedures analíticas.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Relational Databases</span>
+            </div>
+          </div>
+
+          <!-- 3. Processos ETL/ELT -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-diagram-project text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">Processos ETL/ELT</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Data Pipeline &amp; Ingestion</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_etl_desc">
+                Construção de fluxos de extração, tratamento de inconsistências, validação de tipos e carga eficiente.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Data Engineering</span>
+            </div>
+          </div>
+
+          <!-- 4. OCI Oracle Cloud -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-cloud text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">OCI Oracle Cloud</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Autonomous DB &amp; Infrastructure</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_oci_desc">
+                Arquitetura de nuvem Oracle, provisionamento de Autonomous Database, Object Storage e serviços de computação.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Cloud Infrastructure</span>
+            </div>
+          </div>
+
+          <!-- 5. GitHub & Git -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-brands fa-git-alt text-2xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">GitHub &amp; Git</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Version Control &amp; CI/CD</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_git_desc">
+                Controle de versão semântico, branches, code reviews, documentação de repositórios e automações.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Dev &amp; Collaboration</span>
+            </div>
+          </div>
+
+          <!-- 6. Google Looker Studio -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-chart-pie text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">Looker Studio</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Business Intelligence &amp; Dashboards</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_looker_desc">
+                Construção de painéis interativos de tomada de decisão, KPIs em tempo real, campos calculados e storytelling de dados.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Data Visualization</span>
+            </div>
+          </div>
+
+          <!-- 7. Excel & Google Sheets -->
+          <div class="group bg-[#121212] hover:bg-[#161616] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 text-brand-purple group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-file-excel text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold font-display text-white uppercase">Excel &amp; Sheets</h3>
+              <p class="text-xs text-brand-purple font-mono mt-1">Fórmulas Avançadas &amp; Tabelas Dinâmicas</p>
+              <p class="text-xs text-[#8E8E8E] mt-3 leading-relaxed" data-i18n="skill_excel_desc">
+                Tratamento ágil, PROCV/XLOOKUP, index-match, tabelas dinâmicas, validação e modelagem rápida de relatórios.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-[#1C1C1C] flex items-center gap-1.5 text-[11px] font-mono text-[#666666]">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              <span>Productivity &amp; Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCO DE EDUCAÇÃO E FORMAÇÃO ACADÊMICA
+         ========================================== -->
+    <section id="education" class="py-20 md:py-28 bg-[#0D0D0D] border-b border-[#1E1E1E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-14 pb-6 border-b border-[#1E1E1E] space-y-2">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-purple tracking-widest uppercase">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span data-i18n="edu_section_tag">Educação &amp; Especializações</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase" data-i18n="edu_title">
+            FORMAÇÃO ACADÊMICA &amp; CERTIFICAÇÕES
+          </h2>
+          <p class="text-sm sm:text-base text-[#A0A0A0] max-w-3xl" data-i18n="edu_subtitle">
+            Base acadêmica formal e imersão profunda contínua em Ciência de Dados, Engenharia de Software e Banco de Dados.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          
+          <!-- 1. Bacharelado em Ciência da Computação -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-2xl p-6 sm:p-8 transition-all">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-[#1E1E1E]">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-brand-purple flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-terminal text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-black font-display text-white" data-i18n="edu_cs_degree">
+                    Bacharelado em Ciência da Computação
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs font-mono text-[#8E8E8E]">
+                    <span class="text-brand-purple font-semibold">
+                      <i class="fa-solid fa-building mr-1"></i>Universidade Anhembi Morumbi
+                    </span>
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2024 – 2028</span>
+                  </div>
+                </div>
+              </div>
+              <span class="self-start md:self-auto text-[11px] font-mono uppercase tracking-wider text-white bg-brand-purple/20 border border-brand-purple/40 px-3 py-1.5 rounded-full" data-i18n="edu_cs_status">
+                &bull; Em Andamento
+              </span>
+            </div>
+            <div class="py-4">
+              <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="edu_cs_desc">
+                Formação com foco em algoritmos, estruturas de dados, banco de dados relacionais e não relacionais, redes, engenharia de software e computação distribuída.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Especialização em Data Science (Alura + Oracle +130h) -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-2xl p-6 sm:p-8 transition-all">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-[#1E1E1E]">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-brand-purple flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-brain text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-black font-display text-white" data-i18n="edu_ds_degree">
+                    Especialização em Data Science
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs font-mono text-[#8E8E8E]">
+                    <span class="text-brand-purple font-semibold">
+                      <i class="fa-solid fa-building mr-1"></i>Alura + Oracle (+130h)
+                    </span>
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2025 – 2026</span>
+                  </div>
+                </div>
+              </div>
+              <span class="self-start md:self-auto text-[11px] font-mono uppercase tracking-wider text-white bg-brand-purple/20 border border-brand-purple/40 px-3 py-1.5 rounded-full" data-i18n="edu_ds_status">
+                &bull; Especialização Intensiva
+              </span>
+            </div>
+
+            <div class="py-4">
+              <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="edu_ds_desc">
+                Formação intensiva cobrindo todo o ciclo analítico e de engenharia de dados, desde manipulação estatística até modelos de machine learning e arquitetura em nuvem.
+              </p>
+            </div>
+
+            <!-- 4 Eixos Temáticos Estruturados -->
+            <div class="pt-4 border-t border-[#1C1C1C] space-y-4">
+              <div class="text-[11px] font-mono text-brand-purple uppercase tracking-wider font-semibold" data-i18n="edu_curriculum_title">
+                Matriz Curricular Estruturada &amp; Domínios de Aplicação:
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Eixo 1: Dados & ML -->
+                <div class="p-4 rounded-xl bg-[#171717] border border-[#252525] space-y-2">
+                  <div class="text-xs font-bold font-mono text-white flex items-center gap-2">
+                    <i class="fa-solid fa-chart-line text-brand-purple"></i>
+                    <span>Dados &amp; ML</span>
+                  </div>
+                  <p class="text-xs text-[#A0A0A0]" data-i18n="edu_axis_1">
+                    Python (Pandas, NumPy), Scikit-Learn (Classificação/Regressão), Google Looker Studio.
+                  </p>
+                </div>
+
+                <!-- Eixo 2: Banco de Dados & Nuvem -->
+                <div class="p-4 rounded-xl bg-[#171717] border border-[#252525] space-y-2">
+                  <div class="text-xs font-bold font-mono text-white flex items-center gap-2">
+                    <i class="fa-solid fa-cloud text-brand-purple"></i>
+                    <span>Banco de Dados &amp; Nuvem</span>
+                  </div>
+                  <p class="text-xs text-[#A0A0A0]" data-i18n="edu_axis_2">
+                    MySQL (Procedures, Queries Avançadas) e Ecossistema Oracle (OCI, APEX, Autonomous DB).
+                  </p>
+                </div>
+
+                <!-- Eixo 3: Tecnologia & Inovação -->
+                <div class="p-4 rounded-xl bg-[#171717] border border-[#252525] space-y-2">
+                  <div class="text-xs font-bold font-mono text-white flex items-center gap-2">
+                    <i class="fa-solid fa-microchip text-brand-purple"></i>
+                    <span>Tecnologia &amp; Inovação</span>
+                  </div>
+                  <p class="text-xs text-[#A0A0A0]" data-i18n="edu_axis_3">
+                    Lógica (Python/JS), IA Generativa aplicada, Git/GitHub, Metodologias Ágeis.
+                  </p>
+                </div>
+
+                <!-- Eixo 4: Soft Skills -->
+                <div class="p-4 rounded-xl bg-[#171717] border border-[#252525] space-y-2">
+                  <div class="text-xs font-bold font-mono text-white flex items-center gap-2">
+                    <i class="fa-solid fa-users text-brand-purple"></i>
+                    <span>Soft Skills</span>
+                  </div>
+                  <p class="text-xs text-[#A0A0A0]" data-i18n="edu_axis_4">
+                    Aprendizagem Contínua, Foco, Gestão de Metas e Inteligência Emocional.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Bacharelado em Cinema -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-2xl p-6 sm:p-8 transition-all">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-[#1E1E1E]">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-brand-purple flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-film text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-black font-display text-white" data-i18n="edu_cinema_degree">
+                    Bacharelado em Cinema
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs font-mono text-[#8E8E8E]">
+                    <span class="text-brand-purple font-semibold">
+                      <i class="fa-solid fa-building mr-1"></i>Universidade Anhembi Morumbi
+                    </span>
+                    <span><i class="fa-regular fa-calendar mr-1"></i>2010 – 2013</span>
+                  </div>
+                </div>
+              </div>
+              <span class="self-start md:self-auto text-[11px] font-mono uppercase tracking-wider text-white bg-brand-purple/20 border border-brand-purple/40 px-3 py-1.5 rounded-full" data-i18n="edu_cinema_status">
+                &bull; Concluído
+              </span>
+            </div>
+            <div class="py-4">
+              <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="edu_cinema_desc">
+                Formação com ênfase em narrativa visual, direção de arte, processos técnicos de finalização de imagem e áudio, fluxos de pós-produção e storytelling.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCO 3: EXPERIÊNCIA PROFISSIONAL & CLIENTES DE DESTAQUE
+         ========================================== -->
+    <section id="experience" class="py-20 md:py-28 bg-[#0D0D0D] border-b border-[#1E1E1E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <!-- Section Header -->
+        <div class="pb-6 border-b border-[#1E1E1E] space-y-2">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-purple tracking-widest uppercase">
+            <i class="fa-solid fa-briefcase"></i>
+            <span data-i18n="exp_section_tag">Histórico &amp; Entregas Globais</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase" data-i18n="exp_title">
+            EXPERIÊNCIA PROFISSIONAL &amp; CLIENTES DE DESTAQUE
+          </h2>
+          <p class="text-sm sm:text-base text-[#A0A0A0] max-w-3xl" data-i18n="exp_subtitle">
+            Mais de uma década gerenciando pipelines de alta criticidade e padrões rigorosos de entrega para as maiores plataformas de entretenimento do mundo.
+          </p>
+        </div>
+
+        <!-- Destaque Especial: Banner com logos/badges chamativas dos players atendidos -->
+        <div class="bg-gradient-to-r from-[#141414] via-[#1A1A1A] to-[#141414] border border-[#282828] rounded-2xl p-6 sm:p-8">
+          <div class="text-center space-y-4">
+            <div class="text-xs font-mono uppercase tracking-widest text-brand-purple font-semibold" data-i18n="exp_clients_title">
+              Padrões Técnicos Globais de Delivery Atendidos:
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+              <div class="flex items-center justify-center p-4 rounded-xl bg-[#0D0D0D] border border-[#242424] hover:border-brand-purple/70 transition-colors">
+                <span class="font-display font-black text-base sm:text-lg tracking-widest text-white uppercase">NETFLIX</span>
+              </div>
+              <div class="flex items-center justify-center p-4 rounded-xl bg-[#0D0D0D] border border-[#242424] hover:border-brand-purple/70 transition-colors">
+                <span class="font-display font-black text-base sm:text-lg tracking-widest text-white uppercase">HBO</span>
+              </div>
+              <div class="flex items-center justify-center p-4 rounded-xl bg-[#0D0D0D] border border-[#242424] hover:border-brand-purple/70 transition-colors">
+                <span class="font-display font-black text-base sm:text-lg tracking-widest text-white uppercase">GLOBOPLAY</span>
+              </div>
+              <div class="flex items-center justify-center p-4 rounded-xl bg-[#0D0D0D] border border-[#242424] hover:border-brand-purple/70 transition-colors">
+                <span class="font-display font-black text-base sm:text-lg tracking-widest text-white uppercase">AMAZON PRIME</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline / Experience Cards List -->
+        <div class="space-y-6">
+          
+          <!-- 1. Mondial e Aiwa (2025 - 2026) -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/50 rounded-xl p-6 sm:p-8 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#1E1E1E]">
+              <div>
+                <h3 class="text-xl font-bold font-display text-white">Mondial &amp; Aiwa</h3>
+                <p class="text-xs font-mono text-brand-purple mt-0.5" data-i18n="exp_mondial_role">Editora de Vídeo</p>
+              </div>
+              <span class="text-xs font-mono text-[#888888] bg-[#181818] px-3 py-1 rounded-full border border-[#2A2A2A] self-start sm:self-auto">
+                2025 – 2026
+              </span>
+            </div>
+            <div class="pt-4 space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-purple/20 border border-brand-purple/40 text-xs font-mono text-brand-purple">
+                <i class="fa-solid fa-trophy"></i>
+                <span data-i18n="exp_mondial_award">Prêmio de Inovação com Inteligência Artificial (2026)</span>
+              </div>
+              <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="exp_mondial_desc">
+                Desenvolvimento de fluxos otimizados com ferramentas de IA para edição em escala, automação de processos criativos e produção de conteúdo de alta conversão.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Sentimental Filme (2021 - 2025) -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/50 rounded-xl p-6 sm:p-8 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#1E1E1E]">
+              <div>
+                <h3 class="text-xl font-bold font-display text-white">Sentimental Filme</h3>
+                <p class="text-xs font-mono text-brand-purple mt-0.5" data-i18n="exp_sentimental_role">Editora de Vídeo</p>
+              </div>
+              <span class="text-xs font-mono text-[#888888] bg-[#181818] px-3 py-1 rounded-full border border-[#2A2A2A] self-start sm:self-auto">
+                2021 – 2025
+              </span>
+            </div>
+            <div class="pt-4 space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-purple/20 border border-brand-purple/40 text-xs font-mono text-brand-purple">
+                <i class="fa-solid fa-award"></i>
+                <span data-i18n="exp_sentimental_award">Indicação ao EMMY AWARDS ("Bora, o Pódio é Nosso" - Rede Globo)</span>
+              </div>
+              <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="exp_sentimental_desc">
+                Edição e finalização de obras publicitárias e séries documentais de repercussão internacional, com foco em ritmo narrativo e rigor estético.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Polar Filmes (2012 - 2020) -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/50 rounded-xl p-6 sm:p-8 transition-all">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#1E1E1E]">
+              <div>
+                <h3 class="text-xl font-bold font-display text-white">Polar Filmes</h3>
+                <p class="text-xs font-mono text-brand-purple mt-0.5" data-i18n="exp_polar_role">Finalizadora de Vídeo</p>
+              </div>
+              <span class="text-xs font-mono text-[#888888] bg-[#181818] px-3 py-1 rounded-full border border-[#2A2A2A] self-start sm:self-auto">
+                2012 – 2020
+              </span>
+            </div>
+            <div class="pt-4 space-y-2">
+              <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="exp_polar_desc">
+                Atendimento e entrega sob rigorosos padrões técnicos e controle de qualidade para Netflix, HBO, Globoplay e Amazon Prime Video. Gerenciamento de masters, metadados e versionamento.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCO 4: PARTICIPAÇÃO EM EVENTOS E CERTIFICAÇÕES
+         ========================================== -->
+    <section id="certifications" class="py-20 md:py-28 bg-[#0D0D0D] border-b border-[#1E1E1E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-14 pb-6 border-b border-[#1E1E1E] space-y-2">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-purple tracking-widest uppercase">
+            <i class="fa-solid fa-certificate"></i>
+            <span data-i18n="cert_section_tag">Validação &amp; Imersão</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase" data-i18n="cert_title">
+            PARTICIPAÇÃO EM EVENTOS E CERTIFICAÇÕES
+          </h2>
+          <p class="text-sm sm:text-base text-[#A0A0A0] max-w-3xl" data-i18n="cert_subtitle">
+            Certificações de nuvem, imersões deep dive e desafios práticos de engenharia de software em hackathons.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Event 1: Oracle Deep Dive & OCI -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-brand-purple flex items-center justify-center">
+                <i class="fa-solid fa-cloud text-xl"></i>
+              </div>
+              <div>
+                <span class="text-[11px] font-mono text-brand-purple uppercase tracking-wider" data-i18n="cert_oracle_badge">Certificação Oficial 2026</span>
+                <h3 class="text-lg sm:text-xl font-bold font-display text-white" data-i18n="cert_oracle_title">
+                  Oracle Deep Dive &amp; OCI Certified Foundations Associate
+                </h3>
+              </div>
+            </div>
+            <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="cert_oracle_desc">
+              Imersão técnica com especialistas da Oracle abordando arquiteturas em nuvem resilientes, Autonomous Database, segurança em nuvem e governança de dados.
+            </p>
+            <div class="pt-3 border-t border-[#1E1E1E] flex items-center gap-2 text-xs font-mono text-white">
+              <i class="fa-solid fa-check-circle text-brand-purple"></i>
+              <span data-i18n="cert_oracle_status">OCI Foundations Associate (2026)</span>
+            </div>
+          </div>
+
+          <!-- Event 2: Hackathon NoCountry -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-brand-purple flex items-center justify-center">
+                <i class="fa-solid fa-laptop-code text-xl"></i>
+              </div>
+              <div>
+                <span class="text-[11px] font-mono text-brand-purple uppercase tracking-wider" data-i18n="cert_nocountry_badge">Hackathon &amp; Squad Colaborativo</span>
+                <h3 class="text-lg sm:text-xl font-bold font-display text-white" data-i18n="cert_nocountry_title">
+                  Hackathon NoCountry &bull; Projetos Ágeis
+                </h3>
+              </div>
+            </div>
+            <p class="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed" data-i18n="cert_nocountry_desc">
+              Participação prática em equipes multidisciplinares com entregas ágeis (Scrum), simulação de ambiente corporativo real, versionamento Git colaborativo e resolução de problemas.
+            </p>
+            <div class="pt-3 border-t border-[#1E1E1E] flex items-center gap-2 text-xs font-mono text-white">
+              <i class="fa-solid fa-check-circle text-brand-purple"></i>
+              <span data-i18n="cert_nocountry_status">Squad &amp; Agile Product Delivery</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCO 5: PROJETOS COM LINK DIRETO PARA O GITHUB
+         ========================================== -->
+    <section id="projects" class="py-20 md:py-28 bg-[#0D0D0D] border-b border-[#1E1E1E]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-14 pb-6 border-b border-[#1E1E1E] space-y-2">
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-purple tracking-widest uppercase">
+            <i class="fa-solid fa-code-branch"></i>
+            <span data-i18n="proj_section_tag">Repositórios &amp; Código Aberto</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase" data-i18n="proj_title">
+            PROJETOS / PROJECTS
+          </h2>
+          <p class="text-sm sm:text-base text-[#A0A0A0] max-w-3xl" data-i18n="proj_subtitle">
+            Soluções completas de ponta a ponta envolvendo engenharia de dados, machine learning preditivo e dashboards executivos na nuvem.
+          </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Project 1: Pipeline ETL & SQL -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 flex flex-col justify-between space-y-6 transition-all group">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-brand-purple uppercase" data-i18n="proj_1_category">Engenharia de Dados &amp; SQL</span>
+                <span class="text-[#666666]">MySQL &bull; Python</span>
+              </div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-brand-purple transition-colors" data-i18n="proj_1_title">
+                Pipeline de ETL &amp; Análise Automatizada de Dados
+              </h3>
+              <p class="text-xs text-[#A0A0A0] leading-relaxed" data-i18n="proj_1_desc">
+                Pipeline completo de ingestão via API/arquivos, limpeza e transformação com Pandas e carga em banco de dados relacional MySQL com procedures para consultas analíticas em tempo recorde.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Python</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Pandas</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">MySQL</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">ETL/ELT</span>
+              </div>
+            </div>
+
+            <!-- Mandatory GitHub Button -->
+            <a
+              href="https://github.com/deboracguerra"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded bg-[#181818] hover:bg-brand-purple text-white text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 border border-[#2E2E2E] hover:border-brand-purple transition-all"
+              data-i18n="proj_view_github"
+            >
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Ver no GitHub</span>
+            </a>
+          </div>
+
+          <!-- Project 2: Machine Learning Scikit-Learn -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 flex flex-col justify-between space-y-6 transition-all group">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-brand-purple uppercase" data-i18n="proj_2_category">Machine Learning &amp; Estatística</span>
+                <span class="text-[#666666]">Scikit-Learn</span>
+              </div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-brand-purple transition-colors" data-i18n="proj_2_title">
+                Modelo Preditivo &amp; Classificação com Scikit-Learn
+              </h3>
+              <p class="text-xs text-[#A0A0A0] leading-relaxed" data-i18n="proj_2_desc">
+                Desenvolvimento e avaliação de modelos de classificação supervisionada, análise exploratória aprofundada (EDA), engenharia de atributos e validação cruzada com métricas de negócio.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Scikit-Learn</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">EDA</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">NumPy</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Cross-Validation</span>
+              </div>
+            </div>
+
+            <!-- Mandatory GitHub Button -->
+            <a
+              href="https://github.com/deboracguerra"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded bg-[#181818] hover:bg-brand-purple text-white text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 border border-[#2E2E2E] hover:border-brand-purple transition-all"
+              data-i18n="proj_view_github"
+            >
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Ver no GitHub</span>
+            </a>
+          </div>
+
+          <!-- Project 3: Looker Studio & OCI -->
+          <div class="bg-[#121212] border border-[#222222] hover:border-brand-purple/60 rounded-xl p-6 flex flex-col justify-between space-y-6 transition-all group">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-brand-purple uppercase" data-i18n="proj_3_category">Business Intelligence &amp; Cloud</span>
+                <span class="text-[#666666]">OCI &bull; Looker</span>
+              </div>
+              <h3 class="text-xl font-bold font-display text-white group-hover:text-brand-purple transition-colors" data-i18n="proj_3_title">
+                Dashboard Executivo em Looker Studio &amp; OCI
+              </h3>
+              <p class="text-xs text-[#A0A0A0] leading-relaxed" data-i18n="proj_3_desc">
+                Painel visual corporativo conectado a banco de dados na nuvem Oracle, fornecendo KPIs em tempo real, filtros dinâmicos e métricas acionáveis para liderança.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Looker Studio</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Oracle Cloud</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Autonomous DB</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1A1A1A] border border-[#2A2A2A] text-[#CCCCCC]">Data Viz</span>
+              </div>
+            </div>
+
+            <!-- Mandatory GitHub Button -->
+            <a
+              href="https://github.com/deboracguerra"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded bg-[#181818] hover:bg-brand-purple text-white text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 border border-[#2E2E2E] hover:border-brand-purple transition-all"
+              data-i18n="proj_view_github"
+            >
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Ver no GitHub</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCO 6: FOOTER / RODAPÉ EM BLOCO ROXO SÓLIDO
+         ========================================== -->
+    <footer id="contact" class="bg-brand-purple text-white py-16 md:py-20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-12 border-b border-white/20">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-white/80 font-bold" data-i18n="footer_tag">
+              &bull; Contato Direto &bull;
+            </span>
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-black font-display uppercase tracking-tight text-white leading-none" data-i18n="footer_title">
+              VAMOS TRABALHAR JUNTOS?
+            </h2>
+            <p class="text-sm sm:text-base text-white/90 max-w-xl leading-relaxed" data-i18n="footer_subtitle">
+              Estou aberta a oportunidades profissionais na área de Ciência de Dados, Engenharia de Dados e Análise de Negócios. Vamos conversar!
+            </p>
+          </div>
+
+          <!-- Direct Functional Links with Icons -->
+          <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            
+            <!-- Email -->
+            <a
+              href="mailto:deboracguerra@gmail.com"
+              class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 hover:bg-black/40 border border-white/20 hover:border-white text-white transition-all group"
+            >
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                <i class="fa-regular fa-envelope text-base"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/70">Email</div>
+                <div class="text-xs font-bold truncate">deboracguerra@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/5511964844975"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 hover:bg-black/40 border border-white/20 hover:border-white text-white transition-all group"
+            >
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/70">WhatsApp</div>
+                <div class="text-xs font-bold truncate">+55 11 96484-4975</div>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://linkedin.com/in/deboracguerra"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 hover:bg-black/40 border border-white/20 hover:border-white text-white transition-all group"
+            >
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                <i class="fa-brands fa-linkedin-in text-base"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/70">LinkedIn</div>
+                <div class="text-xs font-bold truncate">in/deboracguerra</div>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/deboracguerra"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 hover:bg-black/40 border border-white/20 hover:border-white text-white transition-all group"
+            >
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                <i class="fa-brands fa-github text-base"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/70">GitHub</div>
+                <div class="text-xs font-bold truncate">github.com/deboracguerra</div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Copyright & Bottom Bar -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/80">
+          <div>
+            Copyright &copy; 2026 D&eacute;bora Guerra. Todos os direitos reservados.
+          </div>
+          <div class="flex items-center gap-4 text-[11px] uppercase tracking-wider">
+            <span>São Paulo, SP &bull; Brasil</span>
+            <span>&bull;</span>
+            <span>Data &bull; SQL &bull; OCI</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- ==========================================
+       VANILLA JAVASCRIPT: I18N & INTERACTIONS
+       ========================================== -->
+  <script>
+    // Dictionary with complete translations for PT and EN
+    const TRANSLATIONS = {
+      pt: {
+        nav_about: "Sobre",
+        nav_skills: "Habilidades",
+        nav_education: "Educação",
+        nav_experience: "Experiência",
+        nav_events: "Eventos",
+        nav_projects: "Projetos",
+        nav_contact: "Contato",
+        hero_status: "Disponível para Projetos",
+        hero_badge: "Portfólio Profissional 2026",
+        hero_bio: "Profissional com sólida trajetória em gestão de fluxos de trabalho de pós-produção para grandes players globais (Netflix, HBO, Globoplay, Amazon Prime Video). Atualmente em transição de carreira para a área de Dados, combinando maturidade profissional, capacidade analítica e conhecimentos em Python, SQL e ETL/ELT. Graduanda em Ciência da Computação.",
+        cta_github: "Acessar Meu GitHub",
+        cta_contact: "Contato",
+        stat_experience: "Anos Pós-Produção",
+        stat_datascience: "Data Science Oracle",
+        stat_cert: "OCI Certified",
+        skills_section_tag: "Competências & Ferramentas",
+        skills_title: "HABILIDADES TÉCNICAS (TECH STACK)",
+        skills_subtitle: "Conjunto de tecnologias, bancos relacionais, computação em nuvem e engenharia de dados aplicados na resolução de problemas complexos de negócio.",
+        skill_python_desc: "Análise exploratória, manipulação de dataframes massivos, modelagem preditiva e automação de scripts.",
+        skill_sql_desc: "Modelagem relacional, joins complexos, índices, CTEs, subconsultas e criação de Stored Procedures analíticas.",
+        skill_etl_desc: "Construção de fluxos de extração, tratamento de inconsistências, validação de tipos e carga eficiente.",
+        skill_oci_desc: "Arquitetura de nuvem Oracle, provisionamento de Autonomous Database, Object Storage e serviços de computação.",
+        skill_git_desc: "Controle de versão semântico, branches, code reviews, documentação de repositórios e automações.",
+        skill_looker_desc: "Construção de painéis interativos de tomada de decisão, KPIs em tempo real, campos calculados e storytelling de dados.",
+        skill_excel_desc: "Tratamento ágil, PROCV/XLOOKUP, index-match, tabelas dinâmicas, validação e modelagem rápida de relatórios.",
+        edu_section_tag: "Educação & Especializações",
+        edu_title: "FORMAÇÃO ACADÊMICA & CERTIFICAÇÕES",
+        edu_subtitle: "Base acadêmica formal e imersão profunda contínua em Ciência de Dados, Engenharia de Software e Banco de Dados.",
+        edu_cs_degree: "Bacharelado em Ciência da Computação",
+        edu_cs_status: "• Em Andamento",
+        edu_cs_desc: "Formação com foco em algoritmos, estruturas de dados, banco de dados relacionais e não relacionais, redes, engenharia de software e computação distribuída.",
+        edu_ds_degree: "Especialização em Data Science",
+        edu_ds_status: "• Especialização Intensiva",
+        edu_ds_desc: "Formação intensiva cobrindo todo o ciclo analítico e de engenharia de dados, desde manipulação estatística até modelos de machine learning e arquitetura em nuvem.",
+        edu_curriculum_title: "Matriz Curricular Estruturada & Domínios de Aplicação:",
+        edu_axis_1: "Python (Pandas, NumPy), Scikit-Learn (Classificação/Regressão), Google Looker Studio.",
+        edu_axis_2: "MySQL (Procedures, Queries Avançadas) e Ecossistema Oracle (OCI, APEX, Autonomous DB).",
+        edu_axis_3: "Lógica (Python/JS), IA Generativa aplicada, Git/GitHub, Metodologias Ágeis.",
+        edu_axis_4: "Aprendizagem Contínua, Foco, Gestão de Metas e Inteligência Emocional.",
+        edu_cinema_degree: "Bacharelado em Cinema",
+        edu_cinema_status: "• Concluído",
+        edu_cinema_desc: "Formação com ênfase em narrativa visual, direção de arte, processos técnicos de finalização de imagem e áudio, fluxos de pós-produção e storytelling.",
+        exp_section_tag: "Histórico & Entregas Globais",
+        exp_title: "EXPERIÊNCIA PROFISSIONAL & CLIENTES DE DESTAQUE",
+        exp_subtitle: "Mais de uma década gerenciando pipelines de alta criticidade e padrões rigorosos de entrega para as maiores plataformas de entretenimento do mundo.",
+        exp_clients_title: "Padrões Técnicos Globais de Delivery Atendidos:",
+        exp_mondial_role: "Editora de Vídeo",
+        exp_mondial_award: "Prêmio de Inovação com Inteligência Artificial (2026)",
+        exp_mondial_desc: "Desenvolvimento de fluxos otimizados com ferramentas de IA para edição em escala, automação de processos criativos e produção de conteúdo de alta conversão.",
+        exp_sentimental_role: "Editora de Vídeo",
+        exp_sentimental_award: "Indicação ao EMMY AWARDS (\"Bora, o Pódio é Nosso\" - Rede Globo)",
+        exp_sentimental_desc: "Edição e finalização de obras publicitárias e séries documentais de repercussão internacional, com foco em ritmo narrativo e rigor estético.",
+        exp_polar_role: "Finalizadora de Vídeo",
+        exp_polar_desc: "Atendimento e entrega sob rigorosos padrões técnicos e controle de qualidade para Netflix, HBO, Globoplay e Amazon Prime Video. Gerenciamento de masters, metadados e versionamento.",
+        cert_section_tag: "Validação & Imersão",
+        cert_title: "PARTICIPAÇÃO EM EVENTOS E CERTIFICAÇÕES",
+        cert_subtitle: "Certificações de nuvem, imersões deep dive e desafios práticos de engenharia de software em hackathons.",
+        cert_oracle_badge: "Certificação Oficial 2026",
+        cert_oracle_title: "Oracle Deep Dive & OCI Certified Foundations Associate",
+        cert_oracle_desc: "Imersão técnica com especialistas da Oracle abordando arquiteturas em nuvem resilientes, Autonomous Database, segurança em nuvem e governança de dados.",
+        cert_oracle_status: "OCI Foundations Associate (2026)",
+        cert_nocountry_badge: "Hackathon & Squad Colaborativo",
+        cert_nocountry_title: "Hackathon NoCountry • Projetos Ágeis",
+        cert_nocountry_desc: "Participação prática em equipes multidisciplinares com entregas ágeis (Scrum), simulação de ambiente corporativo real, versionamento Git colaborativo e resolução de problemas.",
+        cert_nocountry_status: "Squad & Agile Product Delivery",
+        proj_section_tag: "Repositórios & Código Aberto",
+        proj_title: "PROJETOS / PROJECTS",
+        proj_subtitle: "Soluções completas de ponta a ponta envolvendo engenharia de dados, machine learning preditivo e dashboards executivos na nuvem.",
+        proj_1_category: "Engenharia de Dados & SQL",
+        proj_1_title: "Pipeline de ETL & Análise Automatizada de Dados",
+        proj_1_desc: "Pipeline completo de ingestão via API/arquivos, limpeza e transformação com Pandas e carga em banco de dados relacional MySQL com procedures para consultas analíticas em tempo recorde.",
+        proj_2_category: "Machine Learning & Estatística",
+        proj_2_title: "Modelo Preditivo & Classificação com Scikit-Learn",
+        proj_2_desc: "Desenvolvimento e avaliação de modelos de classificação supervisionada, análise exploratória aprofundada (EDA), engenharia de atributos e validação cruzada com métricas de negócio.",
+        proj_3_category: "Business Intelligence & Cloud",
+        proj_3_title: "Dashboard Executivo em Looker Studio & OCI",
+        proj_3_desc: "Painel visual corporativo conectado a banco de dados na nuvem Oracle, fornecendo KPIs em tempo real, filtros dinâmicos e métricas acionáveis para liderança.",
+        proj_view_github: "Ver no GitHub",
+        footer_tag: "• Contato Direto •",
+        footer_title: "VAMOS TRABALHAR JUNTOS?",
+        footer_subtitle: "Estou aberta a oportunidades profissionais na área de Ciência de Dados, Engenharia de Dados e Análise de Negócios. Vamos conversar!"
+      },
+      en: {
+        nav_about: "About",
+        nav_skills: "Skills",
+        nav_education: "Education",
+        nav_experience: "Experience",
+        nav_events: "Events",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        hero_status: "Available for Projects",
+        hero_badge: "Professional Portfolio 2026",
+        hero_bio: "Professional with a solid track record in managing post-production workflows for major global players (Netflix, HBO, Globoplay, Amazon Prime Video). Currently transitioning to Data Science, combining professional maturity, analytical problem-solving, and solid expertise in Python, SQL, and ETL/ELT pipelines. B.S. in Computer Science undergraduate.",
+        cta_github: "Access My GitHub",
+        cta_contact: "Contact Me",
+        stat_experience: "Years Post-Production",
+        stat_datascience: "Data Science Oracle",
+        stat_cert: "OCI Certified",
+        skills_section_tag: "Skills & Tooling",
+        skills_title: "TECHNICAL SKILLS (TECH STACK)",
+        skills_subtitle: "Comprehensive toolset of data analysis, relational databases, cloud infrastructure, and data engineering applied to business intelligence.",
+        skill_python_desc: "Exploratory analysis, large dataframe manipulation, predictive machine learning pipelines, and script automation.",
+        skill_sql_desc: "Relational modeling, complex joins, indexes, CTEs, subqueries, and analytical Stored Procedures.",
+        skill_etl_desc: "Building reliable extraction pipelines, null-handling, type validation, and efficient schema loading.",
+        skill_oci_desc: "Oracle Cloud infrastructure architecture, Autonomous Database provisioning, Object Storage, and compute services.",
+        skill_git_desc: "Semantic version control, branching workflows, pull requests, repository documentation, and CI/CD basics.",
+        skill_looker_desc: "Executive decision dashboards, live KPI monitoring, calculated metrics, and data storytelling.",
+        skill_excel_desc: "Fast ad-hoc reporting, XLOOKUP, pivot tables, validation rules, and quick financial/operational modeling.",
+        edu_section_tag: "Education & Specializations",
+        edu_title: "EDUCATION & CERTIFICATIONS",
+        edu_subtitle: "Formal academic foundations combined with continuous deep immersion in Data Science and Cloud Software.",
+        edu_cs_degree: "Bachelor of Science in Computer Science",
+        edu_cs_status: "• In Progress",
+        edu_cs_desc: "Curriculum emphasizing algorithms, advanced data structures, relational and NoSQL databases, computer networks, and distributed systems.",
+        edu_ds_degree: "Data Science Specialization",
+        edu_ds_status: "• Intensive Program",
+        edu_ds_desc: "Comprehensive deep-dive covering the entire data engineering and machine learning lifecycle, from EDA to cloud deployment.",
+        edu_curriculum_title: "Structured Curriculum & Core Domains:",
+        edu_axis_1: "Python (Pandas, NumPy), Scikit-Learn (Classification/Regression), Google Looker Studio.",
+        edu_axis_2: "MySQL (Procedures, Advanced Queries) and Oracle Cloud Ecosystem (OCI, APEX, Autonomous DB).",
+        edu_axis_3: "Programming Logic (Python/JS), Applied Generative AI, Git/GitHub, Agile Frameworks.",
+        edu_axis_4: "Continuous Learning, Focus, Goal Management, and Emotional Intelligence.",
+        edu_cinema_degree: "Bachelor of Arts in Film & Cinema",
+        edu_cinema_status: "• Completed",
+        edu_cinema_desc: "Comprehensive study in visual storytelling, art direction, technical color & audio mastering, high-end post-production, and narrative cadence.",
+        exp_section_tag: "History & Global Delivery",
+        exp_title: "PROFESSIONAL EXPERIENCE & KEY CLIENTS",
+        exp_subtitle: "Over a decade managing mission-critical delivery pipelines under stringent quality standards for top global streaming platforms.",
+        exp_clients_title: "Global Technical Delivery Standards Met:",
+        exp_mondial_role: "Video Editor",
+        exp_mondial_award: "Artificial Intelligence Innovation Award (2026)",
+        exp_mondial_desc: "Implemented AI-assisted editing workflows at scale, automating repetitive post-production tasks and boosting output velocity.",
+        exp_sentimental_role: "Video Editor",
+        exp_sentimental_award: "Emmy Awards Nominated Project (\"Bora, o Pódio é Nosso\" - TV Globo)",
+        exp_sentimental_desc: "Editing and finishing award-winning commercials and documentary series with international broadcast quality.",
+        exp_polar_role: "Post-Production Finishing Specialist",
+        exp_polar_desc: "Delivered masters adhering to strict quality control specs for Netflix, HBO, Globoplay, and Amazon Prime Video. Managed color profiles, audio QC, and digital asset packaging.",
+        cert_section_tag: "Validation & Immersion",
+        cert_title: "EVENTS & CERTIFICATIONS",
+        cert_subtitle: "Cloud credentials, specialized technical bootcamps, and agile teamwork challenges.",
+        cert_oracle_badge: "Official Certification 2026",
+        cert_oracle_title: "Oracle Deep Dive & OCI Certified Foundations Associate",
+        cert_oracle_desc: "Technical immersion with Oracle engineers covering resilient cloud architectures, Autonomous Database, cloud security, and governance.",
+        cert_oracle_status: "OCI Foundations Associate (2026)",
+        cert_nocountry_badge: "Hackathon & Collaborative Squad",
+        cert_nocountry_title: "NoCountry Hackathon • Agile Projects",
+        cert_nocountry_desc: "Hands-on participation in agile squads (Scrum), collaborative Git versioning, sprint reviews, and solving real-world product challenges.",
+        cert_nocountry_status: "Squad & Agile Product Delivery",
+        proj_section_tag: "Repositories & Open Source",
+        proj_title: "PROJETOS / PROJECTS",
+        proj_subtitle: "End-to-end data analytics solutions including automated ETL pipelines, predictive ML models, and interactive cloud dashboards.",
+        proj_1_category: "Data Engineering & SQL",
+        proj_1_title: "Automated Data ETL & Analytics Pipeline",
+        proj_1_desc: "End-to-end data ingestion pipeline via API/flat files, strict transformation using Pandas, and automated load into MySQL with analytical stored procedures.",
+        proj_2_category: "Machine Learning & Statistics",
+        proj_2_title: "Predictive Modeling & Classification with Scikit-Learn",
+        proj_2_desc: "Development and evaluation of supervised classification models, in-depth EDA, feature engineering, cross-validation, and business metrics.",
+        proj_3_category: "Business Intelligence & Cloud",
+        proj_3_title: "Executive Dashboard on Looker Studio & OCI",
+        proj_3_desc: "Interactive business dashboard connected to cloud data sources on Oracle Cloud, delivering real-time KPI tracking and executive insights.",
+        proj_view_github: "View on GitHub",
+        footer_tag: "• Direct Contact •",
+        footer_title: "LET'S WORK TOGETHER?",
+        footer_subtitle: "I am open to professional opportunities in Data Science, Data Engineering, and Business Analytics. Let's get in touch!"
+      }
+    };
+
+    let currentLang = 'pt';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt'];
+
+      // Update all elements with data-i18n attribute
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          // If the element has icon children, preserve them or replace text
+          const icon = el.querySelector('i');
+          if (icon) {
+            const span = el.querySelector('span');
+            if (span) {
+              span.innerText = dict[key];
+            } else {
+              el.innerText = dict[key];
+            }
+          } else {
+            el.innerText = dict[key];
+          }
+        }
+      });
+
+      // Update button styles
+      const btnPt = document.getElementById('lang-btn-pt');
+      const btnEn = document.getElementById('lang-btn-en');
+      if (lang === 'pt') {
+        btnPt.className = 'px-2.5 py-1 rounded font-bold uppercase transition-all bg-brand-purple text-white shadow-sm';
+        btnEn.className = 'px-2.5 py-1 rounded font-bold uppercase transition-all text-[#888888] hover:text-white';
+        document.documentElement.lang = 'pt-BR';
+      } else {
+        btnEn.className = 'px-2.5 py-1 rounded font-bold uppercase transition-all bg-brand-purple text-white shadow-sm';
+        btnPt.className = 'px-2.5 py-1 rounded font-bold uppercase transition-all text-[#888888] hover:text-white';
+        document.documentElement.lang = 'en';
+      }
+
+      localStorage.setItem('debora_portfolio_lang', lang);
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.className = 'fa-solid fa-xmark text-lg';
+      } else {
+        menu.classList.add('hidden');
+        icon.className = 'fa-solid fa-bars text-lg';
+      }
+    }
+
+    // Initialize on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('debora_portfolio_lang') || 'pt';
+      setLanguage(savedLang);
+
+      // Initialize Lucide icons if available
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
