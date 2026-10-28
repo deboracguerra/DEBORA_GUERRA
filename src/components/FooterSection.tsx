@@ -11,8 +11,8 @@ import {
   Check, 
   ArrowUpRight, 
   Sparkles,
-  Send,
-  Heart
+  Heart,
+  Download
 } from 'lucide-react';
 
 interface FooterSectionProps {
@@ -41,30 +41,30 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
   return (
     <footer
       id="contact"
-      className="relative bg-[#8A2BE2] text-white overflow-hidden shadow-2xl"
+      className="relative bg-[#F8FBFE] text-[#2C1810] border-t border-[#DDEAF5] overflow-hidden"
     >
-      {/* Decorative geometric background accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-black/10 rounded-full blur-2xl pointer-events-none" />
+      {/* Decorative delicate background accents */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#5B9BD5]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#5B9BD5]/5 rounded-full blur-2xl pointer-events-none" />
 
-      {/* Main Solid Purple Content Container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+      {/* Main Content Container */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 pb-12">
         {/* Top Call to Action Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-16 border-b border-white/20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-14 border-b border-[#E2EDF6]">
           <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/30 text-xs font-mono-code uppercase tracking-wider text-white">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF5FB] border border-[#C5E1F4] text-xs font-mono-code uppercase tracking-wider text-[#215E89]">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B9BD5]" />
               <span>{language === 'pt' ? 'CONTATO & OPORTUNIDADES' : 'CONTACT & OPPORTUNITIES'}</span>
             </div>
 
             <h2
               id="footer-title"
-              className="text-4xl sm:text-5xl md:text-6xl font-black font-display uppercase tracking-tight text-white leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold font-display uppercase tracking-tight text-[#2C1810] leading-tight"
             >
               {t.footer.title}
             </h2>
 
-            <p className="text-base sm:text-lg text-white/90 max-w-xl font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-[#553F33] max-w-xl font-normal leading-relaxed">
               {t.footer.subtitle}
             </p>
           </div>
@@ -74,19 +74,19 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
             {/* Email Contact Card */}
             <div
               id="footer-email-card"
-              className="bg-black/25 hover:bg-black/35 backdrop-blur-md border border-white/20 rounded-xl p-4 flex items-center justify-between transition-colors"
+              className="bg-white hover:bg-[#FAFDFE] border border-[#DCE8F0] hover:border-[#5B9BD5] rounded-xl p-4 flex items-center justify-between transition-all shadow-xs"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-[#F0F7FD] border border-[#D7EAF7] flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-[#5B9BD5]" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono-code uppercase text-white/70">
+                  <div className="text-[11px] font-mono-code uppercase text-[#8A7366]">
                     {t.footer.emailLabel}
                   </div>
                   <a
                     href={`mailto:${SOCIAL_LINKS.email}`}
-                    className="text-sm sm:text-base font-bold text-white hover:underline"
+                    className="text-sm sm:text-base font-bold text-[#2C1810] hover:text-[#4A90C2] transition-colors"
                   >
                     {SOCIAL_LINKS.email}
                   </a>
@@ -96,35 +96,35 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
               <button
                 type="button"
                 onClick={() => handleCopy(SOCIAL_LINKS.email, 'email')}
-                className="p-2 rounded-lg bg-white/20 hover:bg-white/30 text-white transition-colors"
+                className="p-2 rounded-lg bg-[#F4F8FA] hover:bg-[#EBF4FA] border border-[#DCE8F0] text-[#2C1810] transition-colors"
                 title={t.footer.copyEmail}
                 aria-label="Copy Email"
               >
-                {copiedEmail ? <Check className="w-4 h-4 text-green-300" /> : <Copy className="w-4 h-4" />}
+                {copiedEmail ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-[#5B9BD5]" />}
               </button>
             </div>
 
             {/* WhatsApp Contact Card */}
             <div
               id="footer-whatsapp-card"
-              className="bg-black/25 hover:bg-black/35 backdrop-blur-md border border-white/20 rounded-xl p-4 flex items-center justify-between transition-colors"
+              className="bg-white hover:bg-[#FAFDFE] border border-[#DCE8F0] hover:border-[#5B9BD5] rounded-xl p-4 flex items-center justify-between transition-all shadow-xs"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-[#F0F7FD] border border-[#D7EAF7] flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 text-[#5B9BD5]" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono-code uppercase text-white/70">
+                  <div className="text-[11px] font-mono-code uppercase text-[#8A7366]">
                     {t.footer.whatsappLabel}
                   </div>
                   <a
                     href={SOCIAL_LINKS.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm sm:text-base font-bold text-white hover:underline flex items-center gap-1.5"
+                    className="text-sm sm:text-base font-bold text-[#2C1810] hover:text-[#4A90C2] transition-colors flex items-center gap-1.5"
                   >
                     <span>+55 11 96484-4975</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#5B9BD5]" />
                   </a>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
                 href={SOCIAL_LINKS.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-white text-[#8A2BE2] hover:bg-white/90 text-xs font-extrabold uppercase transition-colors"
+                className="px-3.5 py-1.5 rounded-lg bg-[#5B9BD5] hover:bg-[#4686BD] text-white text-xs font-extrabold uppercase transition-colors shadow-xs"
               >
                 Chat
               </a>
@@ -142,12 +142,12 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
         </div>
 
         {/* Social Links Row */}
-        <div className="py-8 flex flex-wrap items-center justify-between gap-6 border-b border-white/15">
+        <div className="py-8 flex flex-wrap items-center justify-between gap-6 border-b border-[#E2EDF6]">
           <div className="flex items-center gap-2">
-            <span className="font-display text-2xl font-black tracking-tight text-white">
+            <span className="font-display text-2xl font-bold tracking-tight text-[#2C1810]">
               DÉBORA GUERRA
             </span>
-            <span className="text-white/60 font-mono-code text-xs">
+            <span className="text-[#8A7366] font-mono-code text-xs">
               // DATA SCIENCE & POST-PRODUCTION
             </span>
           </div>
@@ -159,9 +159,9 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
               target="_blank"
               rel="noopener noreferrer"
               id="footer-linkedin-btn"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/15 hover:bg-white text-white hover:text-[#8A2BE2] text-xs font-bold font-mono-code transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-[#DCE8F0] hover:border-[#5B9BD5] text-[#2C1810] hover:text-[#4A90C2] text-xs font-bold font-mono-code transition-all duration-200 shadow-xs"
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-4 h-4 text-[#5B9BD5]" />
               <span>LinkedIn</span>
             </a>
 
@@ -170,25 +170,36 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ language, onShowTo
               target="_blank"
               rel="noopener noreferrer"
               id="footer-github-btn"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/15 hover:bg-white text-white hover:text-[#8A2BE2] text-xs font-bold font-mono-code transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-[#DCE8F0] hover:border-[#5B9BD5] text-[#2C1810] hover:text-[#4A90C2] text-xs font-bold font-mono-code transition-all duration-200 shadow-xs"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-4 h-4 text-[#5B9BD5]" />
               <span>GitHub</span>
             </a>
 
             <a
               href={`mailto:${SOCIAL_LINKS.email}`}
               id="footer-email-btn"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/15 hover:bg-white text-white hover:text-[#8A2BE2] text-xs font-bold font-mono-code transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-[#DCE8F0] hover:border-[#5B9BD5] text-[#2C1810] hover:text-[#4A90C2] text-xs font-bold font-mono-code transition-all duration-200 shadow-xs"
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-4 h-4 text-[#5B9BD5]" />
               <span>Email</span>
+            </a>
+
+            <a
+              href="/portfolio-debora-guerra.zip"
+              download="portfolio-debora-guerra.zip"
+              id="footer-download-zip-btn"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5B9BD5] hover:bg-[#4686BD] text-white text-xs font-bold font-mono-code transition-all duration-200 shadow-xs"
+              title={language === 'pt' ? 'Baixar arquivo ZIP completo para o GitHub' : 'Download complete ZIP file for GitHub'}
+            >
+              <Download className="w-4 h-4 text-white" />
+              <span>{language === 'pt' ? 'Baixar ZIP (.zip)' : 'Download ZIP (.zip)'}</span>
             </a>
           </div>
         </div>
 
         {/* Bottom Copyright & Disclaimer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-white/80">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-[#8A7366]">
           <div>
             Copyright © 2026 Débora Guerra. {t.footer.rights}
           </div>

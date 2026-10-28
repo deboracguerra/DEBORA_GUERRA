@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { SOCIAL_LINKS } from '../data/portfolioData';
-import { Globe, Linkedin, Github, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Globe, Linkedin, Github, Menu, X, ArrowUpRight, Download } from 'lucide-react';
 
 interface HeaderProps {
   language: Language;
@@ -37,8 +37,8 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#222222] py-3 shadow-lg shadow-black/40'
-          : 'bg-transparent border-b border-white/5 py-5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[#EAE3DC] py-3 shadow-sm'
+          : 'bg-white/80 backdrop-blur-sm border-b border-[#EFE9E2] py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -48,10 +48,10 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
           id="brand-logo"
           className="group flex items-center gap-1.5 focus:outline-none"
         >
-          <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-white transition-colors">
+          <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-[#2C1810] group-hover:text-[#4A90C2] transition-colors">
             DÉBORA GUERRA
           </span>
-          <span className="w-2.5 h-2.5 rounded-full bg-[#8A2BE2] inline-block group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_#8A2BE2]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#5B9BD5] inline-block group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(91,155,213,0.6)]" />
         </a>
 
         {/* Desktop Navigation Menu */}
@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-wider text-[#A0A0A0] hover:text-white transition-colors duration-200 py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#8A2BE2] hover:after:w-full after:transition-all after:duration-300"
+              className="text-xs font-semibold uppercase tracking-wider text-[#6F594D] hover:text-[#2C1810] transition-colors duration-200 py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#5B9BD5] hover:after:w-full after:transition-all after:duration-300"
             >
               {link.label}
             </a>
@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
           {/* I18n Toggle Button */}
           <div
             id="language-switcher-container"
-            className="flex items-center bg-[#181818] border border-[#2A2A2A] rounded-full p-0.5"
+            className="flex items-center bg-[#F4F8FA] border border-[#DCE8F0] rounded-full p-0.5"
           >
             <button
               id="lang-pt-btn"
@@ -80,8 +80,8 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
               onClick={() => onToggleLanguage('pt')}
               className={`flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full transition-all duration-200 ${
                 language === 'pt'
-                  ? 'bg-[#8A2BE2] text-white shadow-[0_0_12px_rgba(138,43,226,0.5)]'
-                  : 'text-[#888888] hover:text-white'
+                  ? 'bg-[#5B9BD5] text-white shadow-[0_0_10px_rgba(91,155,213,0.4)]'
+                  : 'text-[#647C90] hover:text-[#1F4362]'
               }`}
               title="Português"
             >
@@ -93,8 +93,8 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
               onClick={() => onToggleLanguage('en')}
               className={`flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full transition-all duration-200 ${
                 language === 'en'
-                  ? 'bg-[#8A2BE2] text-white shadow-[0_0_12px_rgba(138,43,226,0.5)]'
-                  : 'text-[#888888] hover:text-white'
+                  ? 'bg-[#5B9BD5] text-white shadow-[0_0_10px_rgba(91,155,213,0.4)]'
+                  : 'text-[#647C90] hover:text-[#1F4362]'
               }`}
               title="English"
             >
@@ -108,11 +108,23 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
             target="_blank"
             rel="noopener noreferrer"
             id="nav-github-link"
-            className="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#181818] border border-[#2A2A2A] text-[#A0A0A0] hover:text-white hover:border-[#8A2BE2] hover:bg-[#8A2BE2]/10 transition-all duration-200"
+            className="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#F4F8FA] border border-[#DCE8F0] text-[#4A7292] hover:text-[#1F4362] hover:border-[#5B9BD5] hover:bg-[#EBF4FA] transition-all duration-200"
             aria-label="GitHub Profile"
             title="GitHub de Débora Guerra"
           >
             <Github className="w-4 h-4" />
+          </a>
+
+          {/* Download ZIP button */}
+          <a
+            href="/portfolio-debora-guerra.zip"
+            download="portfolio-debora-guerra.zip"
+            id="nav-download-zip-btn"
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F4F8FA] border border-[#DCE8F0] text-[#2C1810] hover:text-[#1E5782] hover:border-[#5B9BD5] hover:bg-[#EDF5FB] text-xs font-semibold tracking-wide transition-all duration-200"
+            title={language === 'pt' ? 'Baixar código (.zip) para o GitHub' : 'Download source (.zip) for GitHub'}
+          >
+            <Download className="w-3.5 h-3.5 text-[#5B9BD5]" />
+            <span>.ZIP</span>
           </a>
 
           {/* LinkedIn CTA Button */}
@@ -121,9 +133,9 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
             target="_blank"
             rel="noopener noreferrer"
             id="nav-linkedin-cta"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#8A2BE2]/10 border border-[#8A2BE2]/50 text-white hover:bg-[#8A2BE2] hover:border-[#8A2BE2] text-xs font-bold tracking-wide transition-all duration-300 shadow-[0_0_15px_rgba(138,43,226,0.2)]"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EDF5FB] border border-[#BBD8EE] text-[#1E5782] hover:bg-[#5B9BD5] hover:text-white hover:border-[#5B9BD5] text-xs font-bold tracking-wide transition-all duration-300 shadow-sm"
           >
-            <Linkedin className="w-3.5 h-3.5 text-[#A855F7] group-hover:text-white" />
+            <Linkedin className="w-3.5 h-3.5 text-[#4A90C2] group-hover:text-white" />
             <span>{t.nav.talkCTA}</span>
             <ArrowUpRight className="w-3 h-3 ml-0.5 opacity-70" />
           </a>
@@ -133,10 +145,10 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
             id="mobile-menu-toggle"
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg bg-[#181818] border border-[#2A2A2A] text-white focus:outline-none focus:border-[#8A2BE2]"
+            className="lg:hidden p-2 rounded-lg bg-[#F4F8FA] border border-[#DCE8F0] text-[#2C1810] focus:outline-none focus:border-[#5B9BD5]"
             aria-label="Toggle Mobile Menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 text-[#A0A0A0]" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 text-[#5B9BD5]" />}
           </button>
         </div>
       </div>
@@ -145,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
-          className="lg:hidden bg-[#121212] border-b border-[#2A2A2A] px-6 py-5 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200"
+          className="lg:hidden bg-white border-b border-[#EAE3DC] px-6 py-5 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200 shadow-md"
         >
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
@@ -153,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-semibold uppercase tracking-wider text-[#CCCCCC] hover:text-[#8A2BE2] transition-colors py-1.5 border-b border-[#1E1E1E]"
+                className="text-sm font-semibold uppercase tracking-wider text-[#553E31] hover:text-[#5B9BD5] transition-colors py-1.5 border-b border-[#F0EBE5]"
               >
                 {link.label}
               </a>
@@ -165,7 +177,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#8A2BE2] text-white text-xs font-bold tracking-wide"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#5B9BD5] text-white text-xs font-bold tracking-wide"
             >
               <Linkedin className="w-4 h-4" />
               <span>LinkedIn</span>
@@ -174,10 +186,18 @@ export const Header: React.FC<HeaderProps> = ({ language, onToggleLanguage }) =>
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#1A1A1A] border border-[#333333] text-white text-xs font-bold"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#F4F8FA] border border-[#DCE8F0] text-[#2C1810] text-xs font-bold"
             >
               <Github className="w-4 h-4" />
               <span>GitHub (deboracguerra)</span>
+            </a>
+            <a
+              href="/portfolio-debora-guerra.zip"
+              download="portfolio-debora-guerra.zip"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#EBF4FA] border border-[#BBD8EE] text-[#1E5782] text-xs font-bold"
+            >
+              <Download className="w-4 h-4 text-[#5B9BD5]" />
+              <span>{language === 'pt' ? 'Baixar Código (.ZIP)' : 'Download Source (.ZIP)'}</span>
             </a>
           </div>
         </div>

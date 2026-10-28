@@ -8,9 +8,7 @@ import {
   Github, 
   ExternalLink, 
   ArrowUpRight, 
-  Eye, 
-  Sparkles,
-  Layers
+  Eye 
 } from 'lucide-react';
 
 interface ProjectsSectionProps {
@@ -24,20 +22,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
   return (
     <section
       id="projects"
-      className="relative py-20 md:py-28 bg-[#0D0D0D] border-b border-[#1E1E1E]"
+      className="relative py-18 md:py-24 bg-white border-b border-[#EFE9E2]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 pb-6 border-b border-[#1E1E1E]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-[#EFE9E2]">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#8A2BE2] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#4A90C2] tracking-widest uppercase">
               <FolderGit2 className="w-3.5 h-3.5" />
               <span>{t.projects.sectionTag}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-[#2C1810] uppercase">
               {t.projects.title}
             </h2>
-            <p className="text-sm sm:text-base text-[#A0A0A0] max-w-xl">
+            <p className="text-sm sm:text-base text-[#6A5447] max-w-xl">
               {t.projects.subtitle}
             </p>
           </div>
@@ -48,9 +46,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
             target="_blank"
             rel="noopener noreferrer"
             id="all-github-projects-link"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#161616] border border-[#2E2E2E] hover:border-[#8A2BE2] text-xs font-mono-code text-white hover:text-[#8A2BE2] transition-colors self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#F4F8FA] border border-[#DCE8F0] hover:border-[#5B9BD5] text-xs font-mono-code text-[#2C1810] hover:text-[#4A90C2] transition-colors self-start md:self-auto shadow-xs"
           >
-            <Github className="w-4 h-4 text-[#8A2BE2]" />
+            <Github className="w-4 h-4 text-[#5B9BD5]" />
             <span>github.com/deboracguerra</span>
             <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
           </a>
@@ -61,25 +59,31 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
           id="projects-grid"
           className="grid grid-cols-1 lg:grid-cols-3 gap-7"
         >
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map((project) => (
             <div
               key={project.id}
               id={`project-card-${project.id}`}
-              className="group relative bg-[#121212] hover:bg-[#151515] border border-[#222222] hover:border-[#8A2BE2]/60 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-[0_0_35px_rgba(138,43,226,0.2)]"
+              className="group relative bg-white hover:bg-[#FAFDFE] border border-[#EBE5DF] hover:border-[#98C9ED] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-md"
             >
               <div>
                 {/* Project Image Preview with Overlay */}
-                <div className="relative w-full h-52 overflow-hidden bg-[#0A0A0A] border-b border-[#202020]">
+                <div className="relative w-full h-52 overflow-hidden bg-[#F6F4F1] border-b border-[#EFE9E2]">
                   <img
                     src={project.imageUrl}
-                    alt={project.titlePt}
+                    alt={language === 'pt' ? project.titlePt : project.titleEn}
+                    loading="lazy"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.onerror = null;
+                      target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80';
+                    }}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Category Pill on Image */}
-                  <span className="absolute top-3 left-3 text-[10px] font-mono-code uppercase tracking-wider text-white bg-[#0D0D0D]/85 backdrop-blur-sm border border-white/10 px-2.5 py-1 rounded">
+                  <span className="absolute top-3 left-3 text-[10px] font-mono-code uppercase tracking-wider text-[#1E5681] bg-white/95 backdrop-blur-sm border border-[#DCE8F0] px-2.5 py-1 rounded-md shadow-xs">
                     {language === 'pt' ? project.categoryPt : project.categoryEn}
                   </span>
 
@@ -87,7 +91,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
-                    className="absolute bottom-3 right-3 p-2 rounded-lg bg-[#0D0D0D]/90 border border-white/10 text-[#A0A0A0] hover:text-white hover:bg-[#8A2BE2] hover:border-[#8A2BE2] transition-colors"
+                    className="absolute bottom-3 right-3 p-2 rounded-lg bg-white/90 border border-[#DCE8F0] text-[#553F33] hover:text-white hover:bg-[#5B9BD5] hover:border-[#5B9BD5] transition-colors shadow-xs"
                     title={t.projects.viewDetails}
                   >
                     <Eye className="w-4 h-4" />
@@ -96,19 +100,19 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
 
                 {/* Content Body */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold font-display text-white mb-2.5 group-hover:text-[#8A2BE2] transition-colors">
+                  <h3 className="text-xl font-bold font-display text-[#2C1810] mb-2.5 group-hover:text-[#4A90C2] transition-colors">
                     {language === 'pt' ? project.titlePt : project.titleEn}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-[#553F33] leading-relaxed mb-4">
                     {language === 'pt' ? project.descriptionPt : project.descriptionEn}
                   </p>
 
                   {/* Highlights Bullet List */}
                   <div className="space-y-1.5 mb-5">
                     {project.highlights.slice(0, 2).map((item, i) => (
-                      <div key={i} className="flex items-start gap-1.5 text-[11px] text-[#888888] font-mono-code">
-                        <span className="text-[#8A2BE2] font-bold">›</span>
+                      <div key={i} className="flex items-start gap-1.5 text-[11px] text-[#7A6255] font-mono-code">
+                        <span className="text-[#5B9BD5] font-bold">›</span>
                         <span>{item}</span>
                       </div>
                     ))}
@@ -119,7 +123,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-[#181818] border border-[#262626] text-[#BBBBBB]"
+                        className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-[#F8F6F4] border border-[#E7E0D8] text-[#553F33]"
                       >
                         {tag}
                       </span>
@@ -135,7 +139,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
                   target="_blank"
                   rel="noopener noreferrer"
                   id={`btn-github-${project.id}`}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#8A2BE2]/15 hover:bg-[#8A2BE2] border border-[#8A2BE2]/40 hover:border-[#8A2BE2] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 group/btn"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#5B9BD5] hover:bg-[#4686BD] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-xs hover:shadow-sm group/btn"
                 >
                   <Github className="w-3.5 h-3.5" />
                   <span>{t.projects.viewOnGithub}</span>
@@ -145,10 +149,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ language }) =>
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="px-3.5 py-2.5 rounded-lg bg-[#1A1A1A] hover:bg-[#252525] border border-[#2E2E2E] text-[#AAAAAA] hover:text-white text-xs font-bold font-mono-code transition-colors"
+                  className="px-3.5 py-2.5 rounded-lg bg-[#F4F8FA] hover:bg-[#EBF4FA] border border-[#DCE8F0] text-[#2C1810] text-xs font-bold font-mono-code transition-colors"
                   title={t.projects.viewDetails}
                 >
-                  <Eye className="w-4 h-4" />
+                  <Eye className="w-4 h-4 text-[#5B9BD5]" />
                 </button>
               </div>
             </div>

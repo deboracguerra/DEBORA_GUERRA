@@ -11,10 +11,10 @@ export const ToastNotification: React.FC<ToastNotificationProps> = ({ message })
   return (
     <div
       id="toast-notification-banner"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#141414] border border-[#8A2BE2] text-white text-xs font-mono-code shadow-[0_0_25px_rgba(138,43,226,0.4)] animate-in slide-in-from-bottom-5 duration-300"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white border border-[#BBD8EE] text-[#2C1810] text-xs font-mono-code shadow-lg shadow-[#5B9BD5]/10 animate-in slide-in-from-bottom-5 duration-300"
     >
-      <CheckCircle2 className="w-4 h-4 text-[#8A2BE2]" />
-      <span>{message}</span>
+      <CheckCircle2 className="w-4 h-4 text-[#5B9BD5]" />
+      <span className="font-semibold">{message}</span>
     </div>
   );
 };

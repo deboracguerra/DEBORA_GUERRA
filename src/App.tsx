@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#0D0D0D] text-white selection:bg-[#8A2BE2] selection:text-white font-sans antialiased">
+    <div className="relative min-h-screen bg-white text-[#362016] selection:bg-[#D4E8F8] selection:text-[#1F4362] font-sans antialiased">
       {/* Decorative Editorial Watermarks */}
       <EditorialDecorations />
 
@@ -67,7 +67,7 @@ export default function App() {
         <ProjectsSection language={language} />
       </main>
 
-      {/* BLOCO 6: Footer / Rodapé Sólido Roxo */}
+      {/* BLOCO 6: Footer / Rodapé */}
       <FooterSection
         language={language}
         onShowToast={showToast}
