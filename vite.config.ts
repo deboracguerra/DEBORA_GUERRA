@@ -5,9 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // GitHub Pages publica este projeto em /DEBORA_GUERRA/.
-    // Isso garante que JS, CSS e assets sejam carregados no caminho correto.
-    base: '/DEBORA_GUERRA/',
+    base: './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
