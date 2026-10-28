@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Débora Guerra | Ciência de Dados &amp; Inteligência Analítica</title>
+  <meta name="description" content="Profissional com trajetória em fluxos de trabalho para grandes players globais (Netflix, HBO, Globoplay, Amazon Prime Video). Atuação na área de Marketing e Dados, unindo Python, SQL e ETL/ELT.">
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN (Lido nativamente por qualquer navegador e GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              terracotta: '#9E472A',
+              slate: '#1F4362',
+              cream: '#FAF8F5',
+              dark: '#2C1810',
+              accent: '#E65D2E',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #2C1810;
+    }
+    .font-display { font-family: 'Outfit', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="selection:bg-[#D4E8F8] selection:text-[#1F4362] antialiased overflow-x-hidden min-h-screen">
+
+  <!-- TOP HEADER / NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-[#2C1810]/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo / Name -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-[#1F4362] text-white flex items-center justify-center font-display font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          DG
+        </div>
+        <div>
+          <span class="block font-display font-bold text-lg tracking-tight text-[#2C1810]">
+            Débora Guerra
+          </span>
+          <span class="block text-xs font-mono text-[#9E472A] uppercase tracking-wider">
+            Data Science & Pipelines
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#2C1810]/80">
+        <a href="#skills" class="hover:text-[#9E472A] transition-colors" data-pt="Habilidades" data-en="Skills">Habilidades</a>
+        <a href="#education" class="hover:text-[#9E472A] transition-colors" data-pt="Formação" data-en="Education">Formação</a>
+        <a href="#experience" class="hover:text-[#9E472A] transition-colors" data-pt="Experiência" data-en="Experience">Experiência</a>
+        <a href="#certifications" class="hover:text-[#9E472A] transition-colors" data-pt="Certificações" data-en="Certifications">Certificações</a>
+        <a href="#projects" class="hover:text-[#9E472A] transition-colors" data-pt="Projetos" data-en="Projects">Projetos</a>
+        <a href="#contact" class="hover:text-[#9E472A] transition-colors" data-pt="Contato" data-en="Contact">Contato</a>
+      </nav>
+
+      <!-- Language & Contact Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Toggle -->
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full border border-[#2C1810]/20 text-xs font-mono font-semibold flex items-center gap-1.5 hover:bg-[#2C1810]/5 transition-colors">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-[#1F4362]"></i>
+          <span id="langDisplay">EN</span>
+        </button>
+
+        <a href="https://wa.me/5511964844975" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1F4362] text-white text-xs font-semibold hover:bg-[#152e43] shadow-sm hover:shadow transition-all">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span data-pt="Falar no WhatsApp" data-en="Chat on WhatsApp">Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-white to-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Presentation & Headline -->
+        <div class="lg:col-span-7 space-y-5">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E472A]/10 border border-[#9E472A]/20 text-[#9E472A] text-xs font-mono font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-[#9E472A] animate-pulse"></span>
+            <span data-pt="PORTFÓLIO PROFISSIONAL" data-en="PROFESSIONAL PORTFOLIO">PORTFÓLIO PROFISSIONAL</span>
+          </div>
+
+          <div class="space-y-3">
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C1810] tracking-tight leading-[1.05] uppercase">
+              DÉBORA GUERRA
+            </h1>
+
+            <div class="inline-block text-xs sm:text-sm font-bold font-mono text-[#9E472A] bg-[#9E472A]/10 border border-[#9E472A]/20 px-3.5 py-1.5 rounded-lg tracking-wide uppercase">
+              <span data-pt="CIÊNCIA DE DADOS & INTELIGÊNCIA ANALÍTICA | EX-POST PRODUCTION SPECIALIST" data-en="DATA SCIENCE & ANALYTICAL INTELLIGENCE | EX-POST PRODUCTION SPECIALIST">CIÊNCIA DE DADOS &amp; INTELIGÊNCIA ANALÍTICA | EX-POST PRODUCTION SPECIALIST</span>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg text-[#2C1810]/80 leading-relaxed max-w-2xl font-normal" data-pt="Profissional com trajetória em fluxos de trabalho para grandes players globais (Netflix, HBO, Globoplay, Amazon Prime Video). Atuação na área de Marketing e Dados, desenvolvendo projetos analíticos em Trade Marketing para mensuração de desempenho de vídeos em marketplaces, unindo Python, SQL e processos ETL/ELT. Graduanda em Ciência da Computação." data-en="Professional with track record in workflows for major global players (Netflix, HBO, Globoplay, Amazon Prime Video). Active in Marketing and Data, developing analytical projects in Trade Marketing to measure video performance in marketplaces, combining Python, SQL, and ETL/ELT processes. Computer Science undergraduate.">
+            Profissional com trajetória em fluxos de trabalho para grandes players globais (Netflix, HBO, Globoplay, Amazon Prime Video). Atuação na área de Marketing e Dados, desenvolvendo projetos analíticos em Trade Marketing para mensuração de desempenho de vídeos em marketplaces, unindo Python, SQL e processos ETL/ELT. Graduanda em Ciência da Computação.
+          </p>
+
+          <!-- Core Metrics Strip -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-[#2C1810]/10 max-w-xl">
+            <div>
+              <div class="font-display font-bold text-2xl sm:text-3xl text-[#1F4362]">99.8%</div>
+              <div class="text-xs font-mono text-[#2C1810]/70 uppercase mt-0.5" data-pt="SLA Técnico" data-en="Technical SLA">SLA Técnico</div>
+            </div>
+            <div>
+              <div class="font-display font-bold text-2xl sm:text-3xl text-[#9E472A]">+100</div>
+              <div class="text-xs font-mono text-[#2C1810]/70 uppercase mt-0.5" data-pt="Datasets & Models" data-en="Datasets & Models">Datasets & Models</div>
+            </div>
+            <div>
+              <div class="font-display font-bold text-2xl sm:text-3xl text-[#1F4362]">OCI</div>
+              <div class="text-xs font-mono text-[#2C1810]/70 uppercase mt-0.5" data-pt="Certificação 2026" data-en="Certified 2026">Certificação 2026</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#9E472A] text-white text-sm font-semibold hover:bg-[#83381e] shadow-md hover:shadow-lg transition-all">
+              <span data-pt="Explorar Projetos no GitHub" data-en="Explore GitHub Projects">Explorar Projetos no GitHub</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-[#2C1810]/20 text-[#2C1810] text-sm font-semibold hover:bg-white hover:border-[#2C1810]/40 transition-all">
+              <i data-lucide="linkedin" class="w-4 h-4 text-[#1F4362]"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-[#2C1810]/20 text-[#2C1810] text-sm font-semibold hover:bg-white hover:border-[#2C1810]/40 transition-all">
+              <i data-lucide="github" class="w-4 h-4 text-[#2C1810]"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Circular Video Frame -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96">
+            
+            <!-- Outer decorative rings -->
+            <div class="absolute inset-0 rounded-full border-2 border-dashed border-[#9E472A]/30 animate-spin" style="animation-duration: 40s;"></div>
+            <div class="absolute -inset-3 rounded-full border border-[#1F4362]/20"></div>
+            
+            <!-- Circular Video Frame -->
+            <div class="w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white bg-slate-900 relative z-10">
+              <video 
+                src="./assets/aistudio/movimento_em_looping_9f77be1c_72c9a12a.mp4" 
+                autoplay 
+                loop 
+                muted 
+                playsinline 
+                class="w-full h-full object-cover">
+              </video>
+            </div>
+
+            <!-- Floating Badge: Innovation Award -->
+            <div class="absolute -bottom-3 right-0 sm:right-4 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-[#2C1810]/10 flex items-center gap-2.5 max-w-xs">
+              <div class="w-8 h-8 rounded-full bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[11px] font-bold text-[#2C1810] leading-tight" data-pt="Prêmio de Inovação IA (2026)" data-en="AI Innovation Award (2026)">Prêmio de Inovação IA (2026)</div>
+                <div class="text-[10px] text-[#2C1810]/60 font-mono" data-pt="Mondial & Aiwa" data-en="Mondial & Aiwa">Mondial & Aiwa</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CLIENTS / HIGH-SPEC STREAMING BADGES -->
+      <div class="mt-20 pt-10 border-t border-[#2C1810]/10">
+        <p class="text-xs font-mono uppercase tracking-widest text-center text-[#2C1810]/60 mb-6" data-pt="Experiência em fluxos e entregas para grandes marcas e canais" data-en="Experience delivering for global channels and brands">
+          Experiência em fluxos e entregas para grandes marcas e canais
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#E50914]">NETFLIX</span>
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#5c5c5c]">HBO</span>
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#FB0036]">GLOBOPLAY</span>
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#00A8E1]">AMAZON PRIME VIDEO</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-20 bg-white border-y border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span data-pt="Stack Tecnológica" data-en="Tech Stack">Stack Tecnológica</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Habilidades Técnicas em Dados" data-en="Data Technical Skills">
+          Habilidades Técnicas em Dados
+        </h2>
+        <p class="text-sm sm:text-base text-[#2C1810]/70 mt-3" data-pt="Ferramentas, bibliotecas e ambientes de nuvem empregados no desenvolvimento de pipelines e modelos analíticos." data-en="Tools, libraries, and cloud platforms utilized in data pipelines and analytical models.">
+          Ferramentas, bibliotecas e ambientes de nuvem empregados no desenvolvimento de pipelines e modelos analíticos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Python -->
+        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 hover:border-[#9E472A]/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#2C1810]">Python (Pandas, NumPy, Scikit-Learn)</h3>
+          <p class="text-xs text-[#9E472A] font-mono font-semibold uppercase mt-1" data-pt="Dados & Ciência" data-en="Data & Science">Dados & Ciência</p>
+          <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Manipulação massiva, limpeza, transformações estatísticas e modelagem preditiva com Scikit-Learn." data-en="Massive data manipulation, cleaning, statistical transforms, and predictive modeling with Scikit-Learn.">
+            Manipulação massiva, limpeza, transformações estatísticas e modelagem preditiva com Scikit-Learn.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Pandas</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">NumPy</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Scikit-Learn</span>
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 hover:border-[#1F4362]/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#2C1810]">SQL (MySQL - Procedures & Queries)</h3>
+          <p class="text-xs text-[#1F4362] font-mono font-semibold uppercase mt-1" data-pt="Dados & Consultas" data-en="Data & Queries">Dados & Consultas</p>
+          <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Procedures, Joins complexos, CTEs, Window Functions e otimização de consultas relacionais." data-en="Stored Procedures, complex Joins, CTEs, Window Functions, and query optimization.">
+            Procedures, Joins complexos, CTEs, Window Functions e otimização de consultas relacionais.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">MySQL</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Stored Procedures</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">CTEs</span>
+          </div>
+        </div>
+
+        <!-- ETL / ELT -->
+        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 hover:border-[#9E472A]/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="git-merge" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#2C1810]">Processos ETL / ELT</h3>
+          <p class="text-xs text-[#9E472A] font-mono font-semibold uppercase mt-1" data-pt="Engenharia de Dados" data-en="Data Engineering">Engenharia de Dados</p>
+          <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Construção de pipelines automatizados de extração, transformação e carga com controle de integridade." data-en="Building automated data extraction, transformation, loading pipelines with data quality assurance.">
+            Construção de pipelines automatizados de extração, transformação e carga com controle de integridade.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Pipelines</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Data Quality</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Batch Processing</span>
+          </div>
+        </div>
+
+        <!-- OCI -->
+        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 hover:border-[#1F4362]/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="cloud" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#2C1810]">OCI (Oracle Cloud Infrastructure)</h3>
+          <p class="text-xs text-[#1F4362] font-mono font-semibold uppercase mt-1" data-pt="Nuvem & Infra" data-en="Cloud & Infra">Nuvem & Infra</p>
+          <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Arquitetura de nuvem OCI, bancos autônomos (Autonomous Database), APEX e armazenamento seguro." data-en="OCI cloud architecture, Autonomous Database, APEX, and secure object storage.">
+            Arquitetura de nuvem OCI, bancos autônomos (Autonomous Database), APEX e armazenamento seguro.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Autonomous DB</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Oracle APEX</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">OCI Certified</span>
+          </div>
+        </div>
+
+        <!-- GitHub & Git -->
+        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 hover:border-[#9E472A]/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="git-branch" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#2C1810]">GitHub & Git</h3>
+          <p class="text-xs text-[#9E472A] font-mono font-semibold uppercase mt-1" data-pt="Versionamento & CI/CD" data-en="Version Control & CI/CD">Versionamento & CI/CD</p>
+          <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Controle de versão estruturado, branches, Pull Requests, documentação e repositórios colaborativos." data-en="Structured version control, branches, PRs, documentation, and collaborative repositories.">
+            Controle de versão estruturado, branches, Pull Requests, documentação e repositórios colaborativos.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Git Flow</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Pull Requests</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">CI/CD</span>
+          </div>
+        </div>
+
+        <!-- Google Looker Studio -->
+        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 hover:border-[#1F4362]/40 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#2C1810]">Google Looker Studio</h3>
+          <p class="text-xs text-[#1F4362] font-mono font-semibold uppercase mt-1" data-pt="BI & Visualização" data-en="BI & Visualization">BI & Visualização</p>
+          <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Dashboards interativos executivos, acompanhamento de KPIs de negócio e relatórios automatizados." data-en="Interactive executive dashboards, business KPI tracking, calculated fields, and automated reports.">
+            Dashboards interativos executivos, acompanhamento de KPIs de negócio e relatórios automatizados.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Dashboards</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Campos Calculados</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">KPIs</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="py-20 bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span data-pt="Formação Acadêmica" data-en="Academic Background">Formação Acadêmica</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Graduações e Especializações" data-en="Degrees & Specializations">
+          Graduações e Especializações
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Computer Science Degree -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all">
+          <div class="inline-block px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold mb-4" data-pt="Graduação em Andamento" data-en="Undergraduate Program">
+            Graduação em Andamento
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Bacharelado em Ciência da Computação" data-en="B.S. in Computer Science">
+            Bacharelado em Ciência da Computação
+          </h3>
+          <p class="text-sm font-medium text-[#9E472A] mt-1">Universidade Anhembi Morumbi</p>
+          <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2024 – 2028</p>
+          <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Formação aprofundada em fundamentos de computação, estruturas de dados, algoritmos, cálculo, bancos de dados relacionais e distribuídos, engenharia de software e inteligência artificial." data-en="Solid foundation in computer science principles, data structures, algorithms, calculus, relational and distributed databases, software engineering, and AI systems.">
+            Formação aprofundada em fundamentos de computação, estruturas de dados, algoritmos, cálculo, bancos de dados relacionais e distribuídos, engenharia de software e inteligência artificial.
+          </p>
+        </div>
+
+        <!-- Data Science Spec -->
+        <div class="p-8 rounded-3xl bg-white border-2 border-[#9E472A]/30 shadow-md relative">
+          <div class="absolute -top-3 right-6 bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            +130h Imersão
+          </div>
+          <div class="inline-block px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold mb-4" data-pt="Especialização (+130h)" data-en="Specialization (+130h)">
+            Especialização (+130h)
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Especialização em Data Science" data-en="Data Science Specialization">
+            Especialização em Data Science
+          </h3>
+          <p class="text-sm font-medium text-[#9E472A] mt-1">Alura + Oracle Next Education</p>
+          <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2025 – 2026</p>
+          <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Imersão técnica intensiva com mais de 130 horas de capacitação prática aplicada em todo o ciclo de vida dos dados, desde a modelagem preditiva e engenharia de dados até computação em nuvem." data-en="Intensive hands-on specialization spanning 130+ hours covering the complete data lifecycle, from predictive modeling and data engineering to enterprise cloud computing.">
+            Imersão técnica intensiva com mais de 130 horas de capacitação prática aplicada em todo o ciclo de vida dos dados, desde a modelagem preditiva e engenharia de dados até computação em nuvem.
+          </p>
+        </div>
+
+        <!-- Cinema Degree -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all">
+          <div class="inline-block px-3 py-1 rounded-full bg-[#2C1810]/10 text-[#2C1810] text-xs font-mono font-semibold mb-4" data-pt="Graduação Concluída" data-en="Graduated">
+            Graduação Concluída
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Bacharelado em Cinema" data-en="B.A. in Cinema & Film Production">
+            Bacharelado em Cinema
+          </h3>
+          <p class="text-sm font-medium text-[#9E472A] mt-1">Universidade Anhembi Morumbi</p>
+          <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2010 – 2013</p>
+          <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Formação que consolidou excelência técnica, gestão de fluxos de trabalho de altíssima fidelidade e entrega para os maiores canais e plataformas de streaming globais." data-en="Degree that anchored technical precision, high-fidelity media workflows, and global streaming deliveries.">
+            Formação que consolidou excelência técnica, gestão de fluxos de trabalho de altíssima fidelidade e entrega para os maiores canais e plataformas de streaming globais.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="py-20 bg-white border-y border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span data-pt="Trajetória Profissional" data-en="Career History">Trajetória Profissional</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Experiência Profissional" data-en="Professional Experience">
+          Experiência Profissional
+        </h2>
+      </div>
+
+      <div class="space-y-8 max-w-4xl mx-auto">
+        
+        <!-- Experience 1: Mondial e Aiwa -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold mb-2">
+                2025 - 2026
+              </span>
+              <h3 class="font-display font-bold text-2xl text-[#2C1810]">
+                Trade Marketing - Mondial e Aiwa
+              </h3>
+              <p class="text-sm font-medium text-[#1F4362]" data-pt="Editora de Vídeo" data-en="Video Editor">Editora de Vídeo</p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E472A] text-white text-xs font-bold shadow-sm">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              <span data-pt="Prêmio de Inovação com IA (2026)" data-en="AI Innovation Award (2026)">Prêmio de Inovação com IA (2026)</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-[#2C1810]/80 leading-relaxed mb-4" data-pt="Criação de conteúdos audiovisuais e desenvolvimento de projetos de dados para a área de Trade Marketing na Mondial e Aiwa, focando na análise de desempenho de vídeos nos marketplaces e automações com IA." data-en="Audiovisual production and data analytics projects for Trade Marketing at Mondial and Aiwa, analyzing video performance across marketplaces and implementing AI automations.">
+            Criação de conteúdos audiovisuais e desenvolvimento de projetos de dados para a área de Trade Marketing na Mondial e Aiwa, focando na análise de desempenho de vídeos nos marketplaces e automações com IA.
+          </p>
+
+          <ul class="space-y-2 text-sm text-[#2C1810]/80">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Desenvolvimento de projeto de dados para Trade Marketing, estruturando análises e métricas de desempenho de vídeos nos marketplaces." data-en="Developed data analytics projects for Trade Marketing, establishing metrics to evaluate video performance across e-commerce marketplaces.">
+                Desenvolvimento de projeto de dados para Trade Marketing, estruturando análises e métricas de desempenho de vídeos nos marketplaces.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Ganhadora do Prêmio de Inovação 2026 pela implementação pioneira de fluxos de trabalho com inteligência artificial." data-en="Recipient of the Innovation Award 2026 for pioneering artificial intelligence workflow implementations.">
+                Ganhadora do Prêmio de Inovação 2026 pela implementação pioneira de fluxos de trabalho com inteligência artificial.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Otimização de até 40% no tempo de processamento e catalogação de ativos multimídia corporativos." data-en="Achieved up to 40% reduction in digital asset cataloging and rendering turnaround.">
+                Otimização de até 40% no tempo de processamento e catalogação de ativos multimídia corporativos.
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-[#2C1810]/10">
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Trade Marketing</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Projetos de Dados</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Desempenho em Marketplaces</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Inovação com IA</span>
+          </div>
+        </div>
+
+        <!-- Experience 2: Sentimental Filmes -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold mb-2">
+                2021 - 2025
+              </span>
+              <h3 class="font-display font-bold text-2xl text-[#2C1810]">
+                Publicidade - Sentimental Filmes
+              </h3>
+              <p class="text-sm font-medium text-[#1F4362]" data-pt="Editora de Vídeo" data-en="Video Editor">Editora de Vídeo</p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1F4362] text-white text-xs font-bold shadow-sm">
+              <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-300"></i>
+              <span data-pt="Indicado ao Emmy Awards" data-en="Emmy Awards Nominee">Indicado ao Emmy Awards</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-[#2C1810]/80 leading-relaxed mb-4" data-pt="Atuação em uma das mais prestigiadas produtoras do Brasil, editando obras de grande porte e projetos de alcance nacional para a Rede Globo e grandes agências." data-en="Key editor at one of Brazil's top production houses, delivering high-visibility commercial and documentary projects for Rede Globo and premier agencies.">
+            Atuação em uma das mais prestigiadas produtoras do Brasil, editando obras de grande porte e projetos de alcance nacional para a Rede Globo e grandes agências.
+          </p>
+
+          <ul class="space-y-2 text-sm text-[#2C1810]/80">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Editora do projeto 'Bora, o Pódio é Nosso' para a Rede Globo, oficialmente indicado ao EMMY AWARDS." data-en="Editor for 'Bora, o Pódio é Nosso' on Rede Globo, officially nominated for the EMMY AWARDS.">
+                Editora do projeto "Bora, o Pódio é Nosso" para a Rede Globo, oficialmente indicado ao EMMY AWARDS.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Fluxos de aprovação e entrega de versões em tempo real com clientes exigentes de grandes contas." data-en="Managed real-time client revision cycles for large-scale national broadcast productions.">
+                Fluxos de aprovação e entrega de versões em tempo real com clientes exigentes de grandes contas.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Gestão de versionamento e controle de qualidade técnico (QC) em prazos críticos." data-en="Maintained zero-defect quality control (QC) standards under tight broadcast deadlines.">
+                Gestão de versionamento e controle de qualidade técnico (QC) em prazos críticos.
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-[#2C1810]/10">
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Emmy Awards Nominee</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Rede Globo</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Controle de Qualidade</span>
+          </div>
+        </div>
+
+        <!-- Experience 3: Polar Filmes -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-[#2C1810]/10 text-[#2C1810] text-xs font-mono font-semibold mb-2">
+                2012 - 2020
+              </span>
+              <h3 class="font-display font-bold text-2xl text-[#2C1810]">
+                Polar Filmes
+              </h3>
+              <p class="text-sm font-medium text-[#1F4362]" data-pt="Finalizadora de Vídeo" data-en="Finishing Specialist">Finalizadora de Vídeo</p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2C1810] text-white text-xs font-bold shadow-sm">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span data-pt="Padrão Global Netflix & HBO" data-en="Netflix & HBO Global Specs">Padrão Global Netflix & HBO</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-[#2C1810]/80 leading-relaxed mb-4" data-pt="Atuação na finalização técnica e atendimento sob altos padrões de conformidade para as maiores plataformas mundiais de streaming." data-en="Technical finishing, mastering, conforming, and QC compliance for premier global streaming platforms.">
+            Atuação na finalização técnica e atendimento sob altos padrões de conformidade para as maiores plataformas mundiais de streaming.
+          </p>
+
+          <ul class="space-y-2 text-sm text-[#2C1810]/80">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#2C1810] shrink-0 mt-0.5"></i>
+              <span data-pt="Atendimento e entrega direta sob os altos padrões técnicos de Netflix, HBO, Globoplay e Amazon Prime Video." data-en="Direct technical owner for packaging and delivery adhering to strict technical specifications of global streamers.">
+                Atendimento e entrega direta sob os altos padrões técnicos de Netflix, HBO, Globoplay e Amazon Prime Video.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#2C1810] shrink-0 mt-0.5"></i>
+              <span data-pt="Gestão de volumes massivos de terabytes em pipelines de mídia, conforming e render." data-en="Managed terabytes of critical media pipelines, color conform, and multi-track master files.">
+                Gestão de volumes massivos de terabytes em pipelines de mídia, conforming e render.
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-[#2C1810]/10">
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Netflix Delivery Spec</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">HBO</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Amazon Prime Video</span>
+            <span class="px-3 py-1 rounded-full bg-white text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Globoplay</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="py-20 bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span data-pt="Validação & Reconhecimento" data-en="Validation & Awards">Validação & Reconhecimento</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Certificações & Hackathons" data-en="Certifications & Hackathons">
+          Certificações & Hackathons
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Oracle OCI 2026 -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold" data-pt="Certificação Oficial 2026" data-en="Official Certification 2026">
+              Certificação Oficial 2026
+            </span>
+            <span class="text-xs font-mono text-[#2C1810]/60">Oracle University</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]">
+            Oracle Deep Dive & OCI Certified Foundations Associate 2026
+          </h3>
+          <p class="text-sm text-[#2C1810]/80 mt-3 leading-relaxed" data-pt="Certificação internacional comprovando proficiência em arquitetura de nuvem Oracle, Autonomous Database, segurança em nuvem (IAM), computação e governança de custos." data-en="Official international certification proving proficiency in Oracle Cloud Architecture, Autonomous DB, IAM security, compute instances, and cloud cost management.">
+            Certificação internacional comprovando proficiência em arquitetura de nuvem Oracle, Autonomous Database, segurança em nuvem (IAM), computação e governança de custos.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Oracle Cloud (OCI)</span>
+            <span class="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Autonomous Database</span>
+            <span class="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">IAM Security</span>
+          </div>
+        </div>
+
+        <!-- Hackathon NoCountry -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold" data-pt="Hackathon Internacional" data-en="International Hackathon">
+              Hackathon Internacional
+            </span>
+            <span class="text-xs font-mono text-[#2C1810]/60">2025 - 2026</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]">
+            Hackathon NoCountry (Participação & Projetos)
+          </h3>
+          <p class="text-sm text-[#2C1810]/80 mt-3 leading-relaxed" data-pt="Imersão colaborativa simulando ambiente real de software com squads multidisciplinares internacionais de dados, backend e frontend para resolver problemas reais com metodologias ágeis." data-en="Collaborative tech sprint in cross-functional international squads developing end-to-end data and tech solutions in agile sprints.">
+            Imersão colaborativa simulando ambiente real de software com squads multidisciplinares internacionais de dados, backend e frontend para resolver problemas reais com metodologias ágeis.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Squads Multidisciplinares</span>
+            <span class="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Scrum / Agile</span>
+            <span class="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">GitHub Colaborativo</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-20 bg-white border-t border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+          <span data-pt="Projetos em Destaque" data-en="Featured Projects">Projetos em Destaque</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Projetos de Dados no GitHub" data-en="Data Projects on GitHub">
+          Projetos de Dados no GitHub
+        </h2>
+        <p class="text-sm sm:text-base text-[#2C1810]/70 mt-3" data-pt="Aplicações práticas com código aberto, modelagens completas e arquiteturas implementadas." data-en="Practical applications with open source code, complete modeling, and implemented architectures.">
+          Aplicações práticas com código aberto, modelagens completas e arquiteturas implementadas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: ETL Pipeline -->
+        <div class="rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_etl_pipeline_1789927435998.jpg" alt="Pipeline de ETL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-[#1F4362] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Engenharia de Dados & SQL
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Pipeline de ETL & Análise Automatizada de Dados" data-en="Automated Data ETL & Analytics Pipeline">
+                Pipeline de ETL & Análise Automatizada de Dados
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Pipeline completo de extração via API/Arquivos, tratamento estruturado com Pandas e carga em banco de dados relacional MySQL com procedures para consultas analíticas." data-en="End-to-end data ingestion pipeline via API/flat files, structured transformation using Pandas, and automated load into MySQL with analytical stored procedures.">
+                Pipeline completo de extração via API/Arquivos, tratamento estruturado com Pandas e carga em banco de dados relacional MySQL com procedures para consultas analíticas.
+              </p>
+              
+              <!-- Key Metrics -->
+              <div class="grid grid-cols-3 gap-2 py-4 my-4 border-y border-[#2C1810]/10 text-center">
+                <div>
+                  <div class="font-display font-bold text-sm text-[#1F4362]">+500k</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Registros</div>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-[#9E472A]">< 2.4s</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Carga</div>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-[#1F4362]">99.9%</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Confiabilidade</div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Python</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Pandas</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">MySQL</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">ETL/ELT</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-[#2C1810]/20 text-xs font-semibold text-[#2C1810] hover:bg-[#1F4362] hover:text-white hover:border-[#1F4362] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver Repositório no GitHub" data-en="View Repository on GitHub">Ver Repositório no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Machine Learning Model -->
+        <div class="rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_ml_model_1789927452813.jpg" alt="Modelo de Machine Learning" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Ciência de Dados & ML
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Modelo Preditivo de Machine Learning" data-en="Predictive Machine Learning Model">
+                Modelo Preditivo de Machine Learning
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Modelagem supervisionada com Scikit-Learn para classificação e regressão, incluindo engenharia de atributos (feature engineering), validação cruzada e avaliação de métricas." data-en="Supervised machine learning using Scikit-Learn for classification and regression, featuring feature engineering, cross-validation, and comprehensive metric evaluation.">
+                Modelagem supervisionada com Scikit-Learn para classificação e regressão, incluindo engenharia de atributos (feature engineering), validação cruzada e avaliação de métricas.
+              </p>
+              
+              <!-- Key Metrics -->
+              <div class="grid grid-cols-3 gap-2 py-4 my-4 border-y border-[#2C1810]/10 text-center">
+                <div>
+                  <div class="font-display font-bold text-sm text-[#9E472A]">94.6%</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Acurácia / F1</div>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-[#1F4362]">5 Algos</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Testados</div>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-[#1F4362]">28 Vars</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Features</div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Python</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Scikit-Learn</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Pandas</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">NumPy</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-[#2C1810]/20 text-xs font-semibold text-[#2C1810] hover:bg-[#9E472A] hover:text-white hover:border-[#9E472A] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver Repositório no GitHub" data-en="View Repository on GitHub">Ver Repositório no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Looker Studio Dashboard -->
+        <div class="rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_looker_dashboard_1789927464157.jpg" alt="Dashboard Looker Studio" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-[#1F4362] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              BI & Cloud Analytics
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Dashboard Executivo & Análise Estratégica em Nuvem" data-en="Executive BI Dashboard & Cloud Analytics">
+                Dashboard Executivo & Análise Estratégica em Nuvem
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Dashboard interativo construído no Google Looker Studio conectado a banco de dados em nuvem Oracle (OCI), com filtros dinâmicos e métricas de desempenho em tempo real." data-en="Interactive BI dashboard designed in Google Looker Studio connected to Oracle Cloud (OCI) Autonomous Database, featuring dynamic drill-downs and real-time KPIs.">
+                Dashboard interativo construído no Google Looker Studio conectado a banco de dados em nuvem Oracle (OCI), com filtros dinâmicos e métricas de desempenho em tempo real.
+              </p>
+              
+              <!-- Key Metrics -->
+              <div class="grid grid-cols-3 gap-2 py-4 my-4 border-y border-[#2C1810]/10 text-center">
+                <div>
+                  <div class="font-display font-bold text-sm text-[#1F4362]">18</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">KPIs</div>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-[#9E472A]">Real-time</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Atualização</div>
+                </div>
+                <div>
+                  <div class="font-display font-bold text-sm text-[#1F4362]">OCI/SQL</div>
+                  <div class="text-[10px] font-mono text-[#2C1810]/60">Conexão</div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Looker Studio</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Oracle OCI</span>
+                <span class="px-2 py-0.5 rounded bg-white text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">SQL</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-[#2C1810]/20 text-xs font-semibold text-[#2C1810] hover:bg-[#1F4362] hover:text-white hover:border-[#1F4362] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver Repositório no GitHub" data-en="View Repository on GitHub">Ver Repositório no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER SECTION -->
+  <footer id="contact" class="py-20 bg-[#2C1810] text-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pb-16 border-b border-white/10">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FAF8F5] text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span data-pt="Disponível para novos projetos e oportunidades" data-en="Open for new opportunities and contracts">Disponível para novos projetos e oportunidades</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white" data-pt="Vamos conversar sobre dados, pipelines e resultados?" data-en="Let's connect on data, pipelines, and results?">
+            Vamos conversar sobre dados, pipelines e resultados?
+          </h2>
+          <p class="text-white/70 text-sm sm:text-base font-light max-w-xl" data-pt="Entre em contato direto pelo WhatsApp, LinkedIn ou e-mail corporativo." data-en="Reach out directly via WhatsApp, LinkedIn, or business email.">
+            Entre em contato direto pelo WhatsApp, LinkedIn ou e-mail corporativo.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3">
+          
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/5511964844975" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/30 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="message-square" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">WhatsApp</div>
+              <div class="text-sm font-semibold text-white">+55 11 96484-4975</div>
+            </div>
+          </a>
+
+          <!-- Email Link -->
+          <a href="mailto:deboracguerra@gmail.com" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/30 text-[#E65D2E] flex items-center justify-center shrink-0">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">E-mail</div>
+              <div class="text-sm font-semibold text-white">deboracguerra@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- LinkedIn Link -->
+          <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-[#1F4362]/40 text-[#67a7dc] flex items-center justify-center shrink-0">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">LinkedIn</div>
+              <div class="text-sm font-semibold text-white">/in/débora-guerra-534b80a6</div>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-white/50 gap-4">
+        <div>
+          © 2026 Débora Guerra. Todos os direitos reservados.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+          <a href="#hero" class="hover:text-white transition-colors" data-pt="Voltar ao Topo ↑" data-en="Back to Top ↑">Voltar ao Topo ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: Language Switcher and Icon Initializer -->
+  <script>
+    let currentLang = 'pt';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      document.getElementById('langDisplay').innerText = currentLang === 'pt' ? 'EN' : 'PT';
+      
+      // Update all data-pt and data-en text elements
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        const text = el.getAttribute('data-' + currentLang);
+        if (text) {
+          el.innerText = text;
+        }
+      });
+
+      // Update HTML lang attribute
+      document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+    }
+
+    // Initialize Lucide icons on load
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
