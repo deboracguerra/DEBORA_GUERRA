@@ -1,7 +1,8 @@
 import { TechSkill, ExperienceItem, CertificationItem, ProjectItem, EducationItem } from '../types';
 
-export const DEFAULT_PROFILE_IMAGE = '/src/assets/images/debora_guerra_attached_1786646652816.jpg';
-export const HERO_VIDEO_SRC = '/assets/aistudio/movimento_em_looping_9f77be1c_72c9a12a.mp4';
+const BASE_PATH = import.meta.env.BASE_URL || '/';
+export const DEFAULT_PROFILE_IMAGE = '';
+export const HERO_VIDEO_SRC = `${BASE_PATH.replace(/\/$/, '')}/assets/aistudio/movimento_em_looping_9f77be1c_72c9a12a.mp4`;
 
 export const SOCIAL_LINKS = {
   github: 'https://github.com/deboracguerra',
