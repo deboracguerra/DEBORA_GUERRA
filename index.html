@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Débora Guerra | Data Analytics &amp; Business Intelligence</title>
+  <meta name="description" content="Estudante de Ciência da Computação com foco em Dados, Analytics e Business Intelligence, combinando conhecimentos técnicos em Python, SQL (MySQL) com experiência profissional em Trade Marketing e produção audiovisual.">
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              terracotta: '#9E472A',
+              slate: '#1F4362',
+              cream: '#FAF8F5',
+              dark: '#2C1810',
+              accent: '#E65D2E',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #2C1810;
+    }
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="bg-[#FAF8F5] text-[#2C1810] antialiased selection:bg-[#5B9BD5]/20 selection:text-[#1F4362]">
+
+  <!-- HEADER NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#2C1810]/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo / Identity -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-[#1F4362] text-white flex items-center justify-center font-display font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          DG
+        </div>
+        <div>
+          <span class="block font-display font-bold text-lg tracking-tight text-[#2C1810]">
+            Débora Guerra
+          </span>
+          <span class="block text-xs font-mono text-[#9E472A] uppercase tracking-wider" data-pt="Data Analytics &amp; BI" data-en="Data Analytics &amp; BI">
+            Data Analytics &amp; BI
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#2C1810]/80">
+        <a href="#about-me" class="hover:text-[#9E472A] transition-colors" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="#skills" class="hover:text-[#9E472A] transition-colors" data-pt="Competências" data-en="Skills">Competências</a>
+        <a href="#education" class="hover:text-[#9E472A] transition-colors" data-pt="Formação" data-en="Education">Formação</a>
+        <a href="#experience" class="hover:text-[#9E472A] transition-colors" data-pt="Experiência" data-en="Experience">Experiência</a>
+        <a href="#certifications" class="hover:text-[#9E472A] transition-colors" data-pt="Certificações" data-en="Certifications">Certificações</a>
+        <a href="#projects" class="hover:text-[#9E472A] transition-colors" data-pt="Projetos" data-en="Projects">Projetos</a>
+        <a href="#contact" class="hover:text-[#9E472A] transition-colors" data-pt="Contato" data-en="Contact">Contato</a>
+      </nav>
+
+      <!-- Language & Contact Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Toggle -->
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full border border-[#2C1810]/20 text-xs font-mono font-semibold flex items-center gap-1.5 hover:bg-[#2C1810]/5 transition-colors">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-[#1F4362]"></i>
+          <span id="langDisplay">EN</span>
+        </button>
+
+        <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1F4362] text-white text-xs font-semibold hover:bg-[#152e43] shadow-sm hover:shadow transition-all">
+          <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+          <span data-pt="LinkedIn &amp; Currículo" data-en="LinkedIn &amp; Resume">LinkedIn &amp; Currículo</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-white to-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Presentation & Headline -->
+        <div class="lg:col-span-7 space-y-5">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E472A]/10 border border-[#9E472A]/20 text-[#9E472A] text-xs font-mono font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-[#9E472A] animate-pulse"></span>
+            <span data-pt="Estudante de Ciência da Computação • Foco em Dados &amp; BI" data-en="Computer Science Student • Data &amp; BI Focus">Estudante de Ciência da Computação • Foco em Dados &amp; BI</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C1810] tracking-tight leading-[1.05] uppercase">
+              DÉBORA GUERRA
+            </h1>
+
+            <div class="text-2xl sm:text-3xl font-bold font-display text-[#1F4362]" data-pt="Data Analytics &amp; Business Intelligence" data-en="Data Analytics &amp; Business Intelligence">
+              Data Analytics &amp; Business Intelligence
+            </div>
+
+            <div class="inline-block text-xs sm:text-sm font-semibold font-mono text-[#9E472A] bg-[#9E472A]/10 border border-[#9E472A]/20 px-3.5 py-1.5 rounded-lg tracking-wide">
+              <span data-pt="Transformando dados em insights, conectando tecnologia, análise e negócios." data-en="Turning data into insights, connecting technology, analytics and business.">Transformando dados em insights, conectando tecnologia, análise e negócios.</span>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg text-[#2C1810]/80 leading-relaxed max-w-2xl font-normal" data-pt="Estudante de Ciência da Computação com foco em Dados, Analytics e Business Intelligence, combinando conhecimentos técnicos em Python, SQL (MySQL) e ferramentas analíticas com sólida experiência profissional em Trade Marketing e produção audiovisual. Foco em organizar dados, estruturar análises e transformar informações em insights aplicáveis a decisões de negócio." data-en="Computer Science student focused on Data Analytics, Business Intelligence and Data Science, combining technical knowledge in Python, SQL (MySQL), and analytics tools with solid professional experience in Trade Marketing and audiovisual production. Focused on organizing data, structuring metrics, and turning information into actionable insights for business decisions.">
+            Estudante de Ciência da Computação com foco em Dados, Analytics e Business Intelligence, combinando conhecimentos técnicos em Python, SQL (MySQL) e ferramentas analíticas com sólida experiência profissional em Trade Marketing e produção audiovisual. Foco em organizar dados, estruturar análises e transformar informações em insights aplicáveis a decisões de negócio.
+          </p>
+
+          <!-- Core Credentials Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-[#2C1810]/10 max-w-2xl">
+            <div class="p-3 bg-white border border-[#2C1810]/10 rounded-xl">
+              <div class="font-display font-bold text-base text-[#1F4362]" data-pt="Ciência da Computação" data-en="Computer Science">Ciência da Computação</div>
+              <div class="text-[11px] font-mono text-[#2C1810]/70 mt-0.5" data-pt="2024–2028 • Anhembi Morumbi" data-en="2024–2028 • Undergrad">2024–2028 • Anhembi Morumbi</div>
+            </div>
+            <div class="p-3 bg-white border border-[#2C1810]/10 rounded-xl">
+              <div class="font-display font-bold text-base text-[#9E472A]">+130 Horas</div>
+              <div class="text-[11px] font-mono text-[#2C1810]/70 mt-0.5" data-pt="Data Science • Alura + Oracle" data-en="Data Science • Alura + Oracle">Data Science • Alura + Oracle</div>
+            </div>
+            <div class="p-3 bg-white border border-[#2C1810]/10 rounded-xl">
+              <div class="font-display font-bold text-base text-[#1F4362]">OCI Foundations</div>
+              <div class="text-[11px] font-mono text-[#2C1810]/70 mt-0.5" data-pt="Certificação Oficial 2026" data-en="Official Certified 2026">Certificação Oficial 2026</div>
+            </div>
+            <div class="p-3 bg-white border border-[#2C1810]/10 rounded-xl">
+              <div class="font-display font-bold text-base text-[#9E472A]">Trade Marketing</div>
+              <div class="text-[11px] font-mono text-[#2C1810]/70 mt-0.5" data-pt="Mondial &amp; Inovação IA" data-en="Mondial &amp; AI Innovation">Mondial &amp; Inovação IA</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-4">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#9E472A] text-white text-sm font-semibold hover:bg-[#83381e] shadow-md hover:shadow-lg transition-all">
+              <span data-pt="Visualizar Projetos" data-en="View Projects">Visualizar Projetos</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-[#2C1810]/20 text-[#2C1810] text-sm font-semibold hover:bg-white hover:border-[#2C1810]/40 transition-all">
+              <i data-lucide="linkedin" class="w-4 h-4 text-[#1F4362]"></i>
+              <span data-pt="LinkedIn &amp; Currículo" data-en="LinkedIn &amp; Resume">LinkedIn &amp; Currículo</span>
+            </a>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-[#2C1810]/20 text-[#2C1810] text-sm font-semibold hover:bg-white hover:border-[#2C1810]/40 transition-all">
+              <i data-lucide="github" class="w-4 h-4 text-[#2C1810]"></i>
+              <span>GitHub</span>
+            </a>
+
+            <a href="mailto:deboracguerra@gmail.com" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-[#2C1810]/20 text-[#2C1810] text-sm font-semibold hover:bg-white hover:border-[#2C1810]/40 transition-all">
+              <i data-lucide="mail" class="w-4 h-4 text-[#1F4362]"></i>
+              <span data-pt="Contato" data-en="Contact">Contato</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Circular Video Frame -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96">
+            
+            <!-- Outer decorative rings -->
+            <div class="absolute inset-0 rounded-full border-2 border-dashed border-[#9E472A]/30 animate-spin" style="animation-duration: 40s;"></div>
+            <div class="absolute -inset-3 rounded-full border border-[#1F4362]/20"></div>
+            
+            <!-- Circular Video Frame -->
+            <div class="w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white bg-slate-900 relative z-10">
+              <video 
+                src="./assets/aistudio/movimento_em_looping_9f77be1c_72c9a12a.mp4" 
+                autoplay 
+                loop 
+                muted 
+                playsinline 
+                class="w-full h-full object-cover">
+              </video>
+            </div>
+
+            <!-- Floating Badge: Focus -->
+            <div class="absolute -bottom-3 left-0 sm:left-2 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-[#2C1810]/10 flex items-center gap-2.5 max-w-xs">
+              <div class="w-8 h-8 rounded-full bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center shrink-0">
+                <i data-lucide="database" class="w-4 h-4"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[11px] font-bold text-[#2C1810] leading-tight" data-pt="Foco Técnico" data-en="Technical Focus">Foco Técnico</div>
+                <div class="text-[10px] text-[#2C1810]/60 font-mono" data-pt="Data Analytics &amp; SQL" data-en="Data Analytics &amp; SQL">Data Analytics &amp; SQL</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Innovation Award -->
+            <div class="absolute -top-3 right-0 sm:right-2 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-[#2C1810]/10 flex items-center gap-2.5 max-w-xs">
+              <div class="w-8 h-8 rounded-full bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[11px] font-bold text-[#2C1810] leading-tight" data-pt="Prêmio de Inovação IA (2026)" data-en="AI Innovation Award (2026)">Prêmio de Inovação IA (2026)</div>
+                <div class="text-[10px] text-[#2C1810]/60 font-mono" data-pt="Mondial &amp; Aiwa" data-en="Mondial &amp; Aiwa">Mondial &amp; Aiwa</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CLIENTS / HIGH-SPEC STREAMING BADGES -->
+      <div class="mt-20 pt-10 border-t border-[#2C1810]/10">
+        <p class="text-xs font-mono uppercase tracking-widest text-center text-[#2C1810]/60 mb-6" data-pt="Experiência em fluxos e entregas para grandes marcas e canais" data-en="Experience delivering for global channels and brands">
+          Experiência em fluxos e entregas para grandes marcas e canais
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#E50914]">NETFLIX</span>
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#5c5c5c]">HBO</span>
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#FB0036]">GLOBOPLAY</span>
+          <span class="font-display font-black tracking-wider text-xl sm:text-2xl text-[#00A8E1]">AMAZON PRIME VIDEO</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="about-me" class="py-20 bg-white border-y border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="user" class="w-3.5 h-3.5"></i>
+          <span data-pt="Trajetória &amp; Posicionamento" data-en="Background &amp; Positioning">Trajetória &amp; Posicionamento</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Sobre Mim" data-en="About Me">
+          Sobre Mim
+        </h2>
+        <p class="text-sm sm:text-base text-[#2C1810]/70 mt-3" data-pt="Estudante de Ciência da Computação unindo repertório técnico em dados, vivência corporativa em Trade Marketing e rigor de processos desenvolvido no audiovisual." data-en="Computer Science student combining technical data proficiency, corporate Trade Marketing experience, and process rigor developed in audiovisual production.">
+          Estudante de Ciência da Computação unindo repertório técnico em dados, vivência corporativa em Trade Marketing e rigor de processos desenvolvido no audiovisual.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Narrative Block -->
+        <div class="lg:col-span-7 space-y-5 text-sm sm:text-base text-[#2C1810]/80 leading-relaxed font-light">
+          <div class="p-7 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 space-y-4">
+            <p data-pt="Sou graduanda em Ciência da Computação pela Universidade Anhembi Morumbi (2024–2028), com especialização prática em Data Science pela Alura + Oracle (mais de 130 horas de formação), especialização em Marketing pela Alura (2026) e certificação Oracle Cloud Infrastructure (OCI) Foundations Associate. Possuo ainda formação prévia em Comunicação pela Anhembi Morumbi (2010–2013)." data-en="I am a Computer Science undergraduate at Universidade Anhembi Morumbi (2024–2028), holding a Data Science specialization from Alura + Oracle (130+ practical hours), a Marketing specialization from Alura (2026), and official Oracle Cloud Infrastructure (OCI) Foundations Associate certification. I also hold a prior B.A. in Communications from Anhembi Morumbi (2010–2013).">
+              Sou graduanda em Ciência da Computação pela Universidade Anhembi Morumbi (2024–2028), com especialização prática em Data Science pela Alura + Oracle (mais de 130 horas de formação), especialização em Marketing pela Alura (2026) e certificação Oracle Cloud Infrastructure (OCI) Foundations Associate. Possuo ainda formação prévia em Comunicação pela Anhembi Morumbi (2010–2013).
+            </p>
+            <p data-pt="Minha trajetória profissional reúne experiência em ambientes corporativos de alta demanda: atuei em Trade Marketing na Mondial e Aiwa — participando de iniciativas de organização e análise de dados sobre desempenho de produtos e conteúdo em marketplaces, além de projetos com IA que resultaram em prêmio de inovação em 2026. Anteriormente, construí uma carreira sólida em pós-produção audiovisual na Sentimental Filme e Polar Filmes, finalizando projetos com rigorosas especificações técnicas para players globais como Netflix, HBO, Globoplay e Amazon Prime Video, além de projeto para a Rede Globo indicado ao Emmy." data-en="My career encompasses hands-on experience in demanding professional environments: in Trade Marketing at Mondial and Aiwa, I participated in initiatives organizing and analyzing product and content performance data across e-commerce marketplaces, as well as AI projects recognized with an Innovation Award in 2026. Previously, I built an established career in audiovisual post-production at Sentimental Filme and Polar Filmes, mastering and delivering technical assets strictly conforming to global specifications for Netflix, HBO, Globoplay, and Amazon Prime Video, as well as an Emmy-nominated project for Rede Globo.">
+              Minha trajetória profissional reúne experiência em ambientes corporativos de alta demanda: atuei em Trade Marketing na Mondial e Aiwa — participando de iniciativas de organização e análise de dados sobre desempenho de produtos e conteúdo em marketplaces, além de projetos com IA que resultaram em prêmio de inovação em 2026. Anteriormente, construí uma carreira sólida em pós-produção audiovisual na Sentimental Filme e Polar Filmes, finalizando projetos com rigorosas especificações técnicas para players globais como Netflix, HBO, Globoplay e Amazon Prime Video, além de projeto para a Rede Globo indicado ao Emmy.
+            </p>
+            <p class="font-normal text-[#2C1810]" data-pt="Minha transição para a área de Dados não é uma ruptura, mas uma evolução profissional. Trago competências consolidadas em organização de processos, controle de qualidade (QC), cumprimento de prazos críticos, atenção minuciosa aos detalhes e visão prática de negócios. Combino essa bagagem ao conhecimento técnico em Python, SQL (MySQL), modelagem analítica, Business Intelligence e fundamentos de Machine Learning para solucionar problemas reais de negócio." data-en="My transition into Data is not a disconnect, but a natural professional evolution. I bring proven transferable competencies in workflow organization, quality control (QC), critical deadline adherence, meticulous attention to detail, and practical business acumen. I combine this experience with technical skills in Python, SQL (MySQL), analytical modeling, Business Intelligence, and Machine Learning fundamentals to solve real-world business challenges.">
+              Minha transição para a área de Dados não é uma ruptura, mas uma evolução profissional. Trago competências consolidadas em organização de processos, controle de qualidade (QC), cumprimento de prazos críticos, atenção minuciosa aos detalhes e visão prática de negócios. Combino essa bagagem ao conhecimento técnico em Python, SQL (MySQL), modelagem analítica, Business Intelligence e fundamentos de Machine Learning para solucionar problemas reais de negócio.
+            </p>
+          </div>
+
+          <!-- Languages Card -->
+          <div class="p-6 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10">
+            <div class="flex items-center gap-2 text-xs font-mono font-semibold uppercase text-[#1F4362] mb-3">
+              <i data-lucide="globe" class="w-4 h-4"></i>
+              <span data-pt="Idiomas &amp; Comunicação" data-en="Languages &amp; Communication">Idiomas &amp; Comunicação</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="p-3 bg-white rounded-2xl border border-[#2C1810]/10">
+                <div class="text-xs font-bold text-[#2C1810]" data-pt="Português" data-en="Portuguese">Português</div>
+                <div class="text-[11px] font-mono text-[#9E472A] mt-1" data-pt="Nativo" data-en="Native">Nativo</div>
+              </div>
+              <div class="p-3 bg-white rounded-2xl border border-[#2C1810]/10">
+                <div class="text-xs font-bold text-[#2C1810]" data-pt="Inglês" data-en="English">Inglês</div>
+                <div class="text-[11px] font-mono text-[#1F4362] mt-1" data-pt="B2 • Intermediário-avançado" data-en="B2 • Upper-Intermediate">B2 • Intermediário-avançado</div>
+              </div>
+              <div class="p-3 bg-white rounded-2xl border border-[#2C1810]/10">
+                <div class="text-xs font-bold text-[#2C1810]" data-pt="Francês" data-en="French">Francês</div>
+                <div class="text-[11px] font-mono text-[#2C1810]/70 mt-1" data-pt="A1 • Básico" data-en="A1 • Basic">A1 • Básico</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transferable Skills Column -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="mb-2">
+            <h3 class="font-display font-bold text-lg text-[#2C1810]" data-pt="Competências Transferíveis para Dados" data-en="Transferable Competencies for Data">
+              Competências Transferíveis para Dados
+            </h3>
+            <p class="text-xs font-mono text-[#2C1810]/60 mt-1" data-pt="Habilidades consolidadas na trajetória profissional e aplicadas na área técnica:" data-en="Core skills developed in production and applied to data engineering:">
+              Habilidades consolidadas na trajetória profissional e aplicadas na área técnica:
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center shrink-0">
+              <i data-lucide="workflow" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-[#2C1810]" data-pt="Organização de Processos &amp; Pipelines" data-en="Process &amp; Pipeline Organization">Organização de Processos &amp; Pipelines</h4>
+              <p class="text-xs text-[#2C1810]/70 mt-1 leading-relaxed" data-pt="Estruturação metódica de etapas operacionais, gestão de fluxos de trabalho e controle rigoroso de dados do início ao fim." data-en="Methodical structuring of operational stages, workflow management, and rigorous end-to-end data tracking.">
+                Estruturação metódica de etapas operacionais, gestão de fluxos de trabalho e controle rigoroso de dados do início ao fim.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-[#2C1810]" data-pt="Atenção aos Detalhes &amp; Controle de Qualidade (QC)" data-en="Quality Control (QC) &amp; Detail Orientation">Atenção aos Detalhes &amp; Controle de Qualidade (QC)</h4>
+              <p class="text-xs text-[#2C1810]/70 mt-1 leading-relaxed" data-pt="Histórico de entregas aprovadas sob especificações técnicas rígidas de canais globais, sem tolerância a inconsistências." data-en="Proven history of deliverables conforming to stringent technical specs for global platforms with zero-defect standards.">
+                Histórico de entregas aprovadas sob especificações técnicas rígidas de canais globais, sem tolerância a inconsistências.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center shrink-0">
+              <i data-lucide="clock" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-[#2C1810]" data-pt="Resolução de Problemas &amp; Prazos Críticos" data-en="Critical Deadlines &amp; Problem Solving">Resolução de Problemas &amp; Prazos Críticos</h4>
+              <p class="text-xs text-[#2C1810]/70 mt-1 leading-relaxed" data-pt="Capacidade de diagnosticar falhas, contornar imprevistos técnicos e manter entregas com pontualidade em cenários corporativos exigentes." data-en="Ability to diagnose technical issues, troubleshoot unexpected bottlenecks, and maintain punctual delivery under pressure.">
+                Capacidade de diagnosticar falhas, contornar imprevistos técnicos e manter entregas com pontualidade em cenários corporativos exigentes.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#FAF8F5] border border-[#2C1810]/10 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+              <i data-lucide="briefcase" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-[#2C1810]" data-pt="Visão Pragmática de Negócio &amp; Trade Marketing" data-en="Business Acumen &amp; Trade Marketing">Visão Pragmática de Negócio &amp; Trade Marketing</h4>
+              <p class="text-xs text-[#2C1810]/70 mt-1 leading-relaxed" data-pt="Compreensão de objetivos comerciais, métricas de performance de marketplaces e foco em transformar dados em valor real." data-en="Clear understanding of commercial goals, marketplace performance metrics, and transforming data into actionable value.">
+                Compreensão de objetivos comerciais, métricas de performance de marketplaces e foco em transformar dados em valor real.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-20 bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span data-pt="Competências Técnicas" data-en="Technical Competencies">Competências Técnicas</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Competências Técnicas em Dados" data-en="Technical Skills in Data">
+          Competências Técnicas em Dados
+        </h2>
+        <p class="text-sm sm:text-base text-[#2C1810]/70 mt-3" data-pt="Conhecimentos práticos e honestos organizados por domínios técnicos de dados, engenharia e inteligência de negócios." data-en="Practical, honest skills organized across data domains, engineering, and business intelligence.">
+          Conhecimentos práticos e honestos organizados por domínios técnicos de dados, engenharia e inteligência de negócios.
+        </p>
+      </div>
+
+      <!-- 5 Clean Skill Category Blocks -->
+      <div class="space-y-8 max-w-5xl mx-auto">
+        
+        <!-- Category 1: PROGRAMMING & DATA ANALYSIS -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Programação &amp; Análise de Dados" data-en="Programming &amp; Data Analysis">Programação &amp; Análise de Dados</h3>
+              <p class="text-xs font-mono text-[#9E472A] uppercase" data-pt="Python • SQL • Pandas • NumPy • EDA" data-en="Python • SQL • Pandas • NumPy • EDA">Python • SQL • Pandas • NumPy • EDA</p>
+            </div>
+          </div>
+          <p class="text-sm text-[#2C1810]/80 leading-relaxed mb-5" data-pt="Manipulação de dados, scripts de automação, consultas relacionais e análise exploratória para identificação de inconsistências e preparação de conjuntos de dados analíticos." data-en="Data manipulation, automation scripting, relational queries, and exploratory data analysis for anomaly detection and dataset preparation.">
+            Manipulação de dados, scripts de automação, consultas relacionais e análise exploratória para identificação de inconsistências e preparação de conjuntos de dados analíticos.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Python</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">SQL (MySQL)</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Pandas</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">NumPy</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Exploratory Data Analysis (EDA)</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Data Cleaning</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Data Transformation</span>
+          </div>
+        </div>
+
+        <!-- Category 2: BUSINESS INTELLIGENCE & VISUALIZATION -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center shrink-0">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Business Intelligence &amp; Visualização" data-en="Business Intelligence &amp; Visualization">Business Intelligence &amp; Visualização</h3>
+              <p class="text-xs font-mono text-[#1F4362] uppercase" data-pt="Looker Studio • Excel • Sheets • KPIs" data-en="Looker Studio • Excel • Sheets • KPIs">Looker Studio • Excel • Sheets • KPIs</p>
+            </div>
+          </div>
+          <p class="text-sm text-[#2C1810]/80 leading-relaxed mb-5" data-pt="Desenvolvimento de dashboards interativos e relatórios estruturados para acompanhamento de KPIs de negócio e suporte a decisões operacionais e de marketing." data-en="Interactive dashboard development and structured reports for monitoring business KPIs and supporting operational and marketing decisions.">
+            Desenvolvimento de dashboards interativos e relatórios estruturados para acompanhamento de KPIs de negócio e suporte a decisões operacionais e de marketing.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Google Looker Studio</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Microsoft Excel</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Google Sheets</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">KPI Monitoring</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Data Visualization</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Business Reporting</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Marketing Analytics (Alura 2026)</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Trade Marketing Performance</span>
+          </div>
+        </div>
+
+        <!-- Category 3: DATA ENGINEERING & DATABASES -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Engenharia de Dados &amp; Bancos de Dados" data-en="Data Engineering &amp; Databases">Engenharia de Dados &amp; Bancos de Dados</h3>
+              <p class="text-xs font-mono text-[#9E472A] uppercase" data-pt="ETL / ELT • MySQL • OCI • Git • GitHub" data-en="ETL / ELT • MySQL • OCI • Git • GitHub">ETL / ELT • MySQL • OCI • Git • GitHub</p>
+            </div>
+          </div>
+          <p class="text-sm text-[#2C1810]/80 leading-relaxed mb-5" data-pt="Fundamentos de extração, transformação e carga (ETL/ELT), modelagem relacional de tabelas, fundamentos de arquitetura em nuvem Oracle (OCI) e versionamento de código com Git/GitHub." data-en="Fundamentals of extract, transform, load (ETL/ELT), relational table schema design, Oracle Cloud Infrastructure (OCI) architecture, and Git/GitHub version control.">
+            Fundamentos de extração, transformação e carga (ETL/ELT), modelagem relacional de tabelas, fundamentos de arquitetura em nuvem Oracle (OCI) e versionamento de código com Git/GitHub.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">ETL / ELT Fundamentals</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Relational Databases</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Data Pipelines</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">MySQL</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Oracle Cloud Infrastructure (OCI)</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Git &amp; GitHub</span>
+          </div>
+        </div>
+
+        <!-- Category 4: MACHINE LEARNING -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-[#1F4362]/10 text-[#1F4362] flex items-center justify-center shrink-0">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Machine Learning" data-en="Machine Learning">Machine Learning</h3>
+              <p class="text-xs font-mono text-[#1F4362] uppercase" data-pt="Scikit-learn • Aprendizado Supervisionado • Métricas" data-en="Scikit-learn • Supervised Learning • Metrics">Scikit-learn • Aprendizado Supervisionado • Métricas</p>
+            </div>
+          </div>
+          <p class="text-sm text-[#2C1810]/80 leading-relaxed mb-5" data-pt="Estudo e aplicação prática de algoritmos supervisionados de classificação e regressão, divisão de conjuntos de treino/teste, preparação de variáveis e avaliação metódica de métricas." data-en="Study and hands-on application of supervised classification and regression algorithms, train/test dataset splitting, feature preparation, and methodical metric evaluation.">
+            Estudo e aplicação prática de algoritmos supervisionados de classificação e regressão, divisão de conjuntos de treino/teste, preparação de variáveis e avaliação metódica de métricas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Scikit-learn</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Supervised Learning Fundamentals</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Model Evaluation</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Data Preparation</span>
+          </div>
+        </div>
+
+        <!-- Category 5: AI & AUTOMATION -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/10 text-[#9E472A] flex items-center justify-center shrink-0">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="IA &amp; Automação" data-en="AI &amp; Automation">IA &amp; Automação</h3>
+              <p class="text-xs font-mono text-[#9E472A] uppercase" data-pt="Automação de Processos • Workflows com IA" data-en="Process Automation • AI Workflows">Automação de Processos • Workflows com IA</p>
+            </div>
+          </div>
+          <p class="text-sm text-[#2C1810]/80 leading-relaxed mb-5" data-pt="Exploração e aplicação de ferramentas de inteligência artificial para otimização de rotinas de trabalho, automação de etapas operacionais e produtividade técnica." data-en="Exploration and application of artificial intelligence tools for workflow optimization, operational step automation, and technical productivity.">
+            Exploração e aplicação de ferramentas de inteligência artificial para otimização de rotinas de trabalho, automação de etapas operacionais e produtividade técnica.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">AI-assisted workflows</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">Process Automation</span>
+            <span class="px-3 py-1 rounded-lg bg-[#FAF8F5] border border-[#2C1810]/10 text-xs font-mono font-medium text-[#2C1810]">AI tools for productivity</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="py-20 bg-white border-b border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span data-pt="Formação Acadêmica" data-en="Academic Background">Formação Acadêmica</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Graduações e Especializações" data-en="Degrees &amp; Specializations">
+          Graduações e Especializações
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Computer Science Degree -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold mb-4" data-pt="Graduação em Andamento" data-en="Undergraduate Program">
+              Graduação em Andamento
+            </div>
+            <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Bacharelado em Ciência da Computação" data-en="B.S. in Computer Science">
+              Bacharelado em Ciência da Computação
+            </h3>
+            <p class="text-sm font-medium text-[#9E472A] mt-1">Universidade Anhembi Morumbi</p>
+            <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2024 – 2028</p>
+            <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Formação em fundamentos de computação, estruturas de dados, algoritmos, cálculo, bancos de dados relacionais e distribuídos, engenharia de software e inteligência artificial." data-en="Undergraduate curriculum covering computing fundamentals, data structures, algorithms, calculus, relational and distributed databases, software engineering, and AI.">
+              Formação em fundamentos de computação, estruturas de dados, algoritmos, cálculo, bancos de dados relacionais e distribuídos, engenharia de software e inteligência artificial.
+            </p>
+          </div>
+        </div>
+
+        <!-- Data Science Spec -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border-2 border-[#9E472A]/30 shadow-md relative flex flex-col justify-between">
+          <div class="absolute -top-3 right-6 bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            +130h Prática
+          </div>
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold mb-4" data-pt="Especialização (+130h)" data-en="Specialization (+130h)">
+              Especialização (+130h)
+            </div>
+            <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Especialização em Data Science" data-en="Data Science Specialization">
+              Especialização em Data Science
+            </h3>
+            <p class="text-sm font-medium text-[#9E472A] mt-1">Alura + Oracle Next Education</p>
+            <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2025 – 2026</p>
+            <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Imersão técnica com mais de 130 horas cobrindo todo o ciclo de vida dos dados: programação em Python (Pandas, NumPy), modelagem relacional com MySQL, fundamentos de Machine Learning e computação em nuvem Oracle." data-en="Technical immersion with 130+ hours covering the data lifecycle: Python programming (Pandas, NumPy), relational modeling with MySQL, Machine Learning fundamentals, and Oracle Cloud computing.">
+              Imersão técnica com mais de 130 horas cobrindo todo o ciclo de vida dos dados: programação em Python (Pandas, NumPy), modelagem relacional com MySQL, fundamentos de Machine Learning e computação em nuvem Oracle.
+            </p>
+          </div>
+        </div>
+
+        <!-- Marketing Specialization -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold mb-4" data-pt="Especialização Concluída" data-en="Specialization Completed">
+              Especialização Concluída
+            </div>
+            <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Especialização em Marketing" data-en="Marketing Specialization">
+              Especialização em Marketing
+            </h3>
+            <p class="text-sm font-medium text-[#9E472A] mt-1">Alura</p>
+            <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2026</p>
+            <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Formação voltada a estratégias de marketing digital, análise de métricas e KPIs de desempenho de canais e campanhas, e inteligência de dados aplicada a Trade Marketing e marketplaces." data-en="Specialization focused on digital marketing strategies, channel/campaign KPI performance analysis, and data intelligence applied to Trade Marketing and marketplaces.">
+              Formação voltada a estratégias de marketing digital, análise de métricas e KPIs de desempenho de canais e campanhas, e inteligência de dados aplicada a Trade Marketing e marketplaces.
+            </p>
+          </div>
+        </div>
+
+        <!-- Communications Degree -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#2C1810]/10 text-[#2C1810] text-xs font-mono font-semibold mb-4" data-pt="Graduação Concluída" data-en="Graduated">
+              Graduação Concluída
+            </div>
+            <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Bacharelado em Comunicação" data-en="B.A. in Communications">
+              Bacharelado em Comunicação
+            </h3>
+            <p class="text-sm font-medium text-[#9E472A] mt-1">Universidade Anhembi Morumbi</p>
+            <p class="text-xs font-mono text-[#2C1810]/60 mt-1">2010 – 2013</p>
+            <p class="text-sm text-[#2C1810]/80 mt-4 leading-relaxed" data-pt="Formação de base que estruturou rigor em controle de qualidade, organização de fluxos de trabalho e entrega conforme especificações técnicas de grandes players." data-en="Foundational degree establishing process discipline, workflow organization, quality control, and strict delivery to technical specs.">
+              Formação de base que estruturou rigor em controle de qualidade, organização de fluxos de trabalho e entrega conforme especificações técnicas de grandes players.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="py-20 bg-[#FAF8F5] border-b border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span data-pt="Trajetória Profissional" data-en="Professional Career">Trajetória Profissional</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Experiência Profissional" data-en="Professional Experience">
+          Experiência Profissional
+        </h2>
+        <p class="text-sm sm:text-base text-[#2C1810]/70 mt-3" data-pt="Experiência prática em Trade Marketing, publicidade e produção audiovisual, aplicando rigor técnico, controle de qualidade e foco em processos." data-en="Practical experience in Trade Marketing, advertising, and high-standard media production, applying process discipline, quality control, and business focus.">
+          Experiência prática em Trade Marketing, publicidade e produção audiovisual, aplicando rigor técnico, controle de qualidade e foco em processos.
+        </p>
+      </div>
+
+      <div class="space-y-8 max-w-4xl mx-auto">
+        
+        <!-- Experience 1: Mondial e Aiwa -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold mb-2">
+                2025 – 2026
+              </span>
+              <h3 class="font-display font-bold text-2xl text-[#2C1810]">
+                Mondial e Aiwa
+              </h3>
+              <p class="text-sm font-semibold text-[#1F4362]" data-pt="Editora de Vídeo | Trade Marketing" data-en="Video Editor | Trade Marketing">Editora de Vídeo | Trade Marketing</p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9E472A] text-white text-xs font-bold shadow-sm">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              <span data-pt="Prêmio de Inovação em IA (2026)" data-en="AI Innovation Award (2026)">Prêmio de Inovação em IA (2026)</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-[#2C1810]/80 leading-relaxed mb-4" data-pt="Produção e adaptação de conteúdo digital para produtos e canais de marketplace, com atuação em iniciativas de organização e análise de informações para apoio às decisões de Trade Marketing." data-en="Production and adaptation of digital content for marketplace channels, contributing to data organization and content performance analysis supporting Trade Marketing decisions.">
+            Produção e adaptação de conteúdo digital para produtos e canais de marketplace, com atuação em iniciativas de organização e análise de informações para apoio às decisões de Trade Marketing.
+          </p>
+
+          <ul class="space-y-2 text-sm text-[#2C1810]/80">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Produção e adaptação de conteúdo digital para produtos e canais de marketplace." data-en="Production and adaptation of digital content for products and marketplace channels.">
+                Produção e adaptação de conteúdo digital para produtos e canais de marketplace.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Participação em iniciativas de organização e análise de informações sobre conteúdo de produtos." data-en="Participation in initiatives organizing and analyzing product content information.">
+                Participação em iniciativas de organização e análise de informações sobre conteúdo de produtos.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Desenvolvimento de iniciativas relacionadas à visibilidade de desempenho de conteúdo e apoio às decisões de Trade Marketing." data-en="Development of initiatives related to content performance visibility, supporting Trade Marketing decision-making.">
+                Desenvolvimento de iniciativas relacionadas à visibilidade de desempenho de conteúdo e apoio às decisões de Trade Marketing.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Exploração de ferramentas de inteligência artificial para otimização de fluxos de produção." data-en="Exploration of artificial intelligence tools for production workflow optimization.">
+                Exploração de ferramentas de inteligência artificial para otimização de fluxos de produção.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#9E472A] shrink-0 mt-0.5"></i>
+              <span data-pt="Reconhecimento com prêmio de inovação em IA em 2026." data-en="Recognition with an AI Innovation Award in 2026.">
+                Reconhecimento com prêmio de inovação em IA em 2026.
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-[#2C1810]/10">
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Trade Marketing</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Marketplaces</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Análise de Desempenho</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Organização de Informações</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Inovação em IA</span>
+          </div>
+        </div>
+
+        <!-- Experience 2: Sentimental Filmes -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold mb-2">
+                2021 – 2025
+              </span>
+              <h3 class="font-display font-bold text-2xl text-[#2C1810]">
+                Sentimental Filme
+              </h3>
+              <p class="text-sm font-semibold text-[#1F4362]" data-pt="Editora de Vídeo | Publicidade" data-en="Video Editor | Advertising">Editora de Vídeo | Publicidade</p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1F4362] text-white text-xs font-bold shadow-sm">
+              <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-300"></i>
+              <span data-pt="Indicado ao Emmy Awards" data-en="Emmy Awards Nominee">Indicado ao Emmy Awards</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-[#2C1810]/80 leading-relaxed mb-4" data-pt="Atuação em projetos publicitários de grande porte, com gestão de versões e materiais, organização de fluxos de trabalho, controle de qualidade e cumprimento de prazos." data-en="Execution of high-visibility commercial productions, managing asset versioning, workflow organization, quality control, and deadline adherence.">
+            Atuação em projetos publicitários de grande porte, com gestão de versões e materiais, organização de fluxos de trabalho, controle de qualidade e cumprimento de prazos.
+          </p>
+
+          <ul class="space-y-2 text-sm text-[#2C1810]/80">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Atuação em projetos publicitários de grande porte para grandes marcas e canais." data-en="Delivery of major commercial projects for leading agencies and national broadcasters.">
+                Atuação em projetos publicitários de grande porte para grandes marcas e canais.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Gestão de versões e materiais, organização de fluxos e cumprimento de prazos." data-en="Management of asset versions, multi-tier workflows, and strict production deadlines.">
+                Gestão de versões e materiais, organização de fluxos e cumprimento de prazos.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Controle de qualidade e atenção às especificações técnicas." data-en="Quality control and meticulous attention to technical specifications.">
+                Controle de qualidade e atenção às especificações técnicas.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1F4362] shrink-0 mt-0.5"></i>
+              <span data-pt="Participação no projeto da Rede Globo 'Bora, o Pódio é Nosso', indicado ao Emmy." data-en="Participation in the Rede Globo project 'Bora, o Pódio é Nosso', nominated for the Emmy Awards.">
+                Participação no projeto da Rede Globo "Bora, o Pódio é Nosso", indicado ao Emmy.
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-[#2C1810]/10">
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Emmy Awards Nominee</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Rede Globo</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Gestão de Fluxos</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Controle de Qualidade (QC)</span>
+          </div>
+        </div>
+
+        <!-- Experience 3: Polar Filmes -->
+        <div class="p-8 rounded-3xl bg-white border border-[#2C1810]/10 shadow-sm relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-[#2C1810]/10 text-[#2C1810] text-xs font-mono font-semibold mb-2">
+                2012 – 2020
+              </span>
+              <h3 class="font-display font-bold text-2xl text-[#2C1810]">
+                Polar Filmes
+              </h3>
+              <p class="text-sm font-semibold text-[#1F4362]" data-pt="Especialista em Finalização | Pós-produção" data-en="Finishing Specialist | Post-Production">Especialista em Finalização | Pós-produção</p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2C1810] text-white text-xs font-bold shadow-sm">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span data-pt="Netflix, HBO &amp; Globoplay" data-en="Netflix, HBO &amp; Globoplay">Netflix, HBO &amp; Globoplay</span>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base text-[#2C1810]/80 leading-relaxed mb-4" data-pt="Gestão e finalização técnica de materiais audiovisuais seguindo rigorosos padrões técnicos internacionais de plataformas globais de streaming." data-en="Technical finishing and mastering of complex audiovisual assets conforming to strict global streaming standards.">
+            Gestão e finalização técnica de materiais audiovisuais seguindo rigorosos padrões técnicos internacionais de plataformas globais de streaming.
+          </p>
+
+          <ul class="space-y-2 text-sm text-[#2C1810]/80">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#2C1810] shrink-0 mt-0.5"></i>
+              <span data-pt="Gestão e finalização de materiais audiovisuais." data-en="Management and technical finishing of audiovisual assets.">
+                Gestão e finalização de materiais audiovisuais.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#2C1810] shrink-0 mt-0.5"></i>
+              <span data-pt="Organização de fluxos de pós-produção e controle de qualidade." data-en="Organization of post-production workflows and quality control.">
+                Organização de fluxos de pós-produção e controle de qualidade.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#2C1810] shrink-0 mt-0.5"></i>
+              <span data-pt="Entregas seguindo especificações técnicas de plataformas como Netflix, HBO, Globoplay e Amazon Prime Video." data-en="Deliveries compliant with exact technical specifications of Netflix, HBO, Globoplay, and Amazon Prime Video.">
+                Entregas seguindo especificações técnicas de plataformas como Netflix, HBO, Globoplay e Amazon Prime Video.
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#2C1810] shrink-0 mt-0.5"></i>
+              <span data-pt="Resolução de inconsistências e atenção a padrões técnicos rigorosos." data-en="Resolution of technical inconsistencies with meticulous attention to strict technical standards.">
+                Resolução de inconsistências e atenção a padrões técnicos rigorosos.
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-[#2C1810]/10">
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Padrões Globais de Streaming</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Organização de Processos</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Resolução de Inconsistências</span>
+            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-mono text-[#2C1810] border border-[#2C1810]/10">Controle de Qualidade (QC)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="py-20 bg-white border-b border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span data-pt="Certificações Oficiais" data-en="Official Certifications">Certificações Oficiais</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Certificações e Desenvolvimento Técnico" data-en="Certifications &amp; Technical Development">
+          Certificações e Desenvolvimento Técnico
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Oracle OCI 2026 -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold" data-pt="Certificação Oficial 2026" data-en="Official Certification 2026">
+              Certificação Oficial 2026
+            </span>
+            <span class="text-xs font-mono text-[#2C1810]/60">Oracle University</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]">
+            Oracle Cloud Infrastructure Certified Foundations Associate
+          </h3>
+          <p class="text-sm text-[#2C1810]/80 mt-3 leading-relaxed" data-pt="Certificação internacional comprovando fundamentos em arquitetura de nuvem Oracle (OCI), conceitos de bancos de dados autônomos (Autonomous Database), segurança (IAM) e governança em nuvem." data-en="International certification validating core knowledge in Oracle Cloud Infrastructure (OCI) architecture, Autonomous Database concepts, IAM security, and cloud governance.">
+            Certificação internacional comprovando fundamentos em arquitetura de nuvem Oracle (OCI), conceitos de bancos de dados autônomos (Autonomous Database), segurança (IAM) e governança em nuvem.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Oracle Cloud (OCI)</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Autonomous Database</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">IAM Security</span>
+          </div>
+        </div>
+
+        <!-- Hackathon NoCountry -->
+        <div class="p-8 rounded-3xl bg-[#FAF8F5] border border-[#2C1810]/10 shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full bg-[#9E472A]/10 text-[#9E472A] text-xs font-mono font-semibold" data-pt="Imersão Prática em Squads" data-en="Practical Squad Immersion">
+              Imersão Prática em Squads
+            </span>
+            <span class="text-xs font-mono text-[#2C1810]/60">2025 – 2026</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Hackathon NoCountry (Participação Prática)" data-en="NoCountry Tech Hackathon (Hands-on Participation)">
+            Hackathon NoCountry (Participação Prática)
+          </h3>
+          <p class="text-sm text-[#2C1810]/80 mt-3 leading-relaxed" data-pt="Participação em equipes colaborativas multidisciplinares simulando dinâmica ágil de software e dados para resolução de problemas reais com Git e metodologias ágeis." data-en="Collaborative participation in cross-functional squads applying agile workflows and Git version control to solve real problems.">
+            Participação em equipes colaborativas multidisciplinares simulando dinâmica ágil de software e dados para resolução de problemas reais com Git e metodologias ágeis.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Trabalho em Equipe</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Metodologias Ágeis</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-[#2C1810]/10 text-[11px] font-mono text-[#2C1810]">Git &amp; GitHub Colaborativo</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-20 bg-[#FAF8F5] border-b border-[#2C1810]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F4362]/10 text-[#1F4362] text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+          <span data-pt="Projetos Aplicados" data-en="Applied Projects">Projetos Aplicados</span>
+        </div>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C1810] tracking-tight" data-pt="Projetos em Dados &amp; Analytics" data-en="Data &amp; Analytics Projects">
+          Projetos em Dados &amp; Analytics
+        </h2>
+        <p class="text-sm sm:text-base text-[#2C1810]/70 mt-3" data-pt="Projetos práticos demonstrando aplicação de análise de dados, modelagem, pipelines e visualização de indicadores de negócio." data-en="Applied projects demonstrating data analysis, structured modeling, data pipelines, and business KPI visualization.">
+          Projetos práticos demonstrando aplicação de análise de dados, modelagem, pipelines e visualização de indicadores de negócio.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Project 1: Trade Marketing Analytics (FEATURED & PRIORITY) -->
+        <div class="rounded-3xl bg-white border-2 border-[#9E472A]/40 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-52 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_looker_dashboard_1789927464157.jpg" alt="Trade Marketing Analytics" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
+              <span class="bg-[#1F4362] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                Data Analytics &amp; BI
+              </span>
+              <span class="bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" data-pt="Em desenvolvimento" data-en="In Progress">
+                Em desenvolvimento
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Trade Marketing Analytics — Performance de Conteúdo em Marketplaces" data-en="Trade Marketing Analytics — Marketplace Content Performance">
+                Trade Marketing Analytics — Performance de Conteúdo em Marketplaces
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Iniciativa voltada à organização e estruturação de informações sobre produtos e conteúdos digitais em marketplaces, desenvolvendo uma estrutura analítica para acompanhar indicadores e investigar oportunidades de melhoria." data-en="Initiative dedicated to organizing and structuring product and digital content data across marketplaces, developing an analytical framework to track key indicators and investigate performance improvement opportunities.">
+                Iniciativa voltada à organização e estruturação de informações sobre produtos e conteúdos digitais em marketplaces, desenvolvendo uma estrutura analítica para acompanhar indicadores e investigar oportunidades de melhoria.
+              </p>
+              
+              <div class="space-y-1.5 my-4 text-xs font-mono text-[#2C1810]/80">
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#9E472A] font-bold">›</span>
+                  <span data-pt="Organização e estruturação de dados de produtos em marketplaces" data-en="Organizing and structuring product data across marketplaces">Organização e estruturação de dados de produtos em marketplaces</span>
+                </div>
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#9E472A] font-bold">›</span>
+                  <span data-pt="Mapeamento de indicadores para suporte a decisões de Trade Marketing" data-en="Mapping indicators supporting Trade Marketing decisions">Mapeamento de indicadores para suporte a decisões de Trade Marketing</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Data Analytics</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Business Intelligence</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Trade Marketing</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Marketplaces</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#1F4362] text-xs font-semibold text-white hover:bg-[#152e43] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: ETL Pipeline -->
+        <div class="rounded-3xl bg-white border border-[#2C1810]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-52 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_etl_pipeline_1789927435998.jpg" alt="Pipeline de ETL" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
+              <span class="bg-[#1F4362] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                Engenharia de Dados &amp; SQL
+              </span>
+              <span class="bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" data-pt="Em desenvolvimento" data-en="In Progress">
+                Em desenvolvimento
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Pipeline de ETL &amp; Modelagem Relacional de Dados" data-en="ETL Pipeline &amp; Relational Data Modeling">
+                Pipeline de ETL &amp; Modelagem Relacional de Dados
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Construção de pipeline de extração, tratamento e limpeza de dados utilizando Python e Pandas, com carregamento em banco de dados relacional MySQL e escrita de consultas analíticas estruturadas." data-en="Construction of a data pipeline for ingestion, data cleaning, and transformation using Python and Pandas, loading into a MySQL relational database with structured analytical queries.">
+                Construção de pipeline de extração, tratamento e limpeza de dados utilizando Python e Pandas, com carregamento em banco de dados relacional MySQL e escrita de consultas analíticas estruturadas.
+              </p>
+              
+              <div class="space-y-1.5 my-4 text-xs font-mono text-[#2C1810]/80">
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#1F4362] font-bold">›</span>
+                  <span data-pt="Tratamento e limpeza de dados tabulares com Pandas" data-en="Data cleaning and tabular transforms with Pandas">Tratamento e limpeza de dados tabulares com Pandas</span>
+                </div>
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#1F4362] font-bold">›</span>
+                  <span data-pt="Modelagem de tabelas e integridade referencial em MySQL" data-en="Table modeling and referential integrity in MySQL">Modelagem de tabelas e integridade referencial em MySQL</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Python</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Pandas</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">MySQL</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">ETL / ELT</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-[#2C1810]/20 text-xs font-semibold text-[#2C1810] hover:bg-[#1F4362] hover:text-white hover:border-[#1F4362] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Machine Learning Model -->
+        <div class="rounded-3xl bg-white border border-[#2C1810]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-52 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_ml_model_1789927452813.jpg" alt="Modelo de Machine Learning" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
+              <span class="bg-[#1F4362] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                Ciência de Dados &amp; ML
+              </span>
+              <span class="bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" data-pt="Em desenvolvimento" data-en="In Progress">
+                Em desenvolvimento
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Análise Exploratória &amp; Modelo de Machine Learning" data-en="Exploratory Analysis &amp; Machine Learning Model">
+                Análise Exploratória &amp; Modelo de Machine Learning
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Estudo e aplicação prática de algoritmos supervisionados com Scikit-Learn: análise exploratória (EDA), preparação de atributos e avaliação fundamentada de métricas de classificação." data-en="Study and practical application of supervised machine learning algorithms with Scikit-Learn: exploratory data analysis (EDA), feature preparation, and grounded evaluation of classification metrics.">
+                Estudo e aplicação prática de algoritmos supervisionados com Scikit-Learn: análise exploratória (EDA), preparação de atributos e avaliação fundamentada de métricas de classificação.
+              </p>
+              
+              <div class="space-y-1.5 my-4 text-xs font-mono text-[#2C1810]/80">
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#9E472A] font-bold">›</span>
+                  <span data-pt="Análise exploratória inicial (EDA) e distribuições" data-en="Initial exploratory data analysis (EDA) and distributions">Análise exploratória inicial (EDA) e distribuições</span>
+                </div>
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#9E472A] font-bold">›</span>
+                  <span data-pt="Pré-processamento e avaliação por métricas supervisionadas" data-en="Preprocessing and evaluation via supervised metrics">Pré-processamento e avaliação por métricas supervisionadas</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Python</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Scikit-Learn</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Pandas</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">EDA</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-[#2C1810]/20 text-xs font-semibold text-[#2C1810] hover:bg-[#9E472A] hover:text-white hover:border-[#9E472A] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Looker Studio Dashboard -->
+        <div class="rounded-3xl bg-white border border-[#2C1810]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+          <div class="h-52 overflow-hidden bg-slate-900 relative">
+            <img src="./assets/images/project_looker_dashboard_1786646063116.jpg" alt="Dashboard Looker Studio" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
+              <span class="bg-[#1F4362] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                BI &amp; Visualização
+              </span>
+              <span class="bg-[#9E472A] text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" data-pt="Em desenvolvimento" data-en="In Progress">
+                Em desenvolvimento
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-[#2C1810]" data-pt="Dashboard Analítico &amp; Visualização de Indicadores" data-en="Analytical BI Dashboard &amp; KPI Tracking">
+                Dashboard Analítico &amp; Visualização de Indicadores
+              </h3>
+              <p class="text-sm text-[#2C1810]/75 mt-3 leading-relaxed" data-pt="Desenvolvimento de painéis interativos no Google Looker Studio e planilhas integradas, organizando métricas essenciais para visualização clara de desempenho e apoio à tomada de decisão." data-en="Development of interactive dashboards in Google Looker Studio and connected spreadsheets, organizing key metrics for clear performance visualization and decision support.">
+                Desenvolvimento de painéis interativos no Google Looker Studio e planilhas integradas, organizando métricas essenciais para visualização clara de desempenho e apoio à tomada de decisão.
+              </p>
+              
+              <div class="space-y-1.5 my-4 text-xs font-mono text-[#2C1810]/80">
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#1F4362] font-bold">›</span>
+                  <span data-pt="Filtros dinâmicos e navegação intuitiva de indicadores" data-en="Dynamic filters and intuitive KPI navigation">Filtros dinâmicos e navegação intuitiva de indicadores</span>
+                </div>
+                <div class="flex items-start gap-1.5">
+                  <span class="text-[#1F4362] font-bold">›</span>
+                  <span data-pt="Estruturação de métricas para suporte à tomada de decisão" data-en="Metric structuring for executive decision support">Estruturação de métricas para suporte à tomada de decisão</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Looker Studio</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Microsoft Excel</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">Google Sheets</span>
+                <span class="px-2 py-0.5 rounded bg-[#FAF8F5] text-[10px] font-mono text-[#2C1810] border border-[#2C1810]/10">KPIs</span>
+              </div>
+            </div>
+
+            <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-[#2C1810]/20 text-xs font-semibold text-[#2C1810] hover:bg-[#1F4362] hover:text-white hover:border-[#1F4362] transition-colors shadow-sm">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER SECTION -->
+  <footer id="contact" class="py-20 bg-[#2C1810] text-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pb-16 border-b border-white/10">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FAF8F5] text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span data-pt="Disponível para oportunidades de estágio e desenvolvimento em Dados &amp; BI" data-en="Available for internship and early-career opportunities in Data &amp; BI">Disponível para oportunidades de estágio e desenvolvimento em Dados &amp; BI</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white" data-pt="Vamos conversar sobre dados, analytics e oportunidades?" data-en="Let's connect on data, analytics, and opportunities?">
+            Vamos conversar sobre dados, analytics e oportunidades?
+          </h2>
+          <p class="text-white/70 text-sm sm:text-base font-light max-w-xl" data-pt="Estou disponível para oportunidades em Data Analytics, Business Intelligence, Data Science e áreas analíticas. Entre em contato direto pelo LinkedIn, e-mail ou WhatsApp." data-en="Available for internship and early-career roles in Data Analytics, Business Intelligence, Data Science, and analytical positions. Reach out directly via LinkedIn, email, or WhatsApp.">
+            Estou disponível para oportunidades em Data Analytics, Business Intelligence, Data Science e áreas analíticas. Entre em contato direto pelo LinkedIn, e-mail ou WhatsApp.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3">
+          
+          <!-- LinkedIn Link -->
+          <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-[#1F4362]/40 text-[#67a7dc] flex items-center justify-center shrink-0">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">LinkedIn</div>
+              <div class="text-sm font-semibold text-white">/in/débora-guerra-534b80a6</div>
+            </div>
+          </a>
+
+          <!-- GitHub Link -->
+          <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center shrink-0">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">GitHub</div>
+              <div class="text-sm font-semibold text-white">github.com/deboracguerra</div>
+            </div>
+          </a>
+
+          <!-- Email Link -->
+          <a href="mailto:deboracguerra@gmail.com" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-[#9E472A]/30 text-[#E65D2E] flex items-center justify-center shrink-0">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">E-mail</div>
+              <div class="text-sm font-semibold text-white">deboracguerra@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/5511964844975" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/30 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="message-square" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-white/50">WhatsApp</div>
+              <div class="text-sm font-semibold text-white">+55 11 96484-4975</div>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-white/50 gap-4">
+        <div>
+          © 2026 Débora Guerra. Todos os direitos reservados.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/deboracguerra" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/d%C3%A9bora-guerra-534b80a6/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+          <a href="#hero" class="hover:text-white transition-colors" data-pt="Voltar ao Topo ↑" data-en="Back to Top ↑">Voltar ao Topo ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: Language Switcher and Icon Initializer -->
+  <script>
+    let currentLang = 'pt';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      document.getElementById('langDisplay').innerText = currentLang === 'pt' ? 'EN' : 'PT';
+      
+      // Update all data-pt and data-en text elements
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        const text = el.getAttribute('data-' + currentLang);
+        if (text) {
+          el.innerText = text;
+        }
+      });
+
+      // Update HTML lang attribute
+      document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+      
+      // Ensure icons remain rendered
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Initialize Lucide icons on load
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
